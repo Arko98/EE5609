@@ -225,7 +225,14 @@ Hence proved, every pair $(x_1,x_2)$ is a solution for the equation $\vec{AX}$ =
 &\xleftrightarrow{R_2=\frac{a}{ad-bc}R_2}\myvec{1&\frac{b}{a}&0\\0&1&0}\\
 &\xleftrightarrow{R_1 = R_1-\frac{b}{a}R_2}\myvec{1&0&0\\0&1&0}\label{eqI3}
 \end{align}
-In \eqref{eqI1}, \eqref{eqI2} and \eqref{eqI3}, from the reduced form of the augmented matrix we can see that it has only one trivial solution $x_1=x_2=0$. Hence proved, the equation $\vec{AX}$=0 has only one trivial solution $x_1=x_2=0$
+\textbf{Case 4: }Considering the following case,
+\begin{align}
+\vec{A}\vec{X} = \vec{u} \not= 0\\
+\implies\myvec{a&b\\c&d}\myvec{x_1\\x_2} &=\myvec{u_1\\u_2}\not= \vec{0}\label{eqComp}\\
+\intertext{Comparing \eqref{eqComp} with $\vec{A}\vec{X}=0$, the equation will be satisfied if and only if,}
+\myvec{u_1\\u_2}= \myvec{0\\0}\label{compare}
+\end{align}
+In \eqref{eqI1}, \eqref{eqI2}, \eqref{eqI3} and \eqref{compare}, we can see that it has only one trivial solution $x_1=x_2=0$. Hence proved, the equation $\vec{AX}$=0 has only one trivial solution $x_1=x_2=0$
 
 
 \subsection{Solution 3}
