@@ -225,16 +225,26 @@ Hence proved, every pair $(x_1,x_2)$ is a solution for the equation $\vec{AX}$ =
 &\xleftrightarrow{R_2=\frac{a}{ad-bc}R_2}\myvec{1&\frac{b}{a}&0\\0&1&0}\\
 &\xleftrightarrow{R_1 = R_1-\frac{b}{a}R_2}\myvec{1&0&0\\0&1&0}\label{eqI3}
 \end{align}
-\textbf{Case 4: }Considering the following case,
+\textbf{Case 4: }Let $a,b,c,d\not=0$. Considering the following case,
 \begin{align}
 \vec{A}\vec{X} = \vec{u} \not= 0\\
 \implies\myvec{a&b\\c&d}\myvec{x_1\\x_2} &=\myvec{u_1\\u_2}\not= \vec{0}\label{eqComp}\\
-\intertext{Comparing \eqref{eqComp} with $\vec{A}\vec{X}=0$, the equation will be satisfied if and only if,}
-\myvec{u_1\\u_2}= \myvec{0\\0}\label{compare}
+\intertext{Row Reducing the augmented matrix of \eqref{eqComp} we get,}
+\myvec{a&b&u_1\\c&d&u_2}&\xleftrightarrow{R_1 = \frac{1}{a}R_1}\myvec{1&\frac{b}{a}&\frac{u_1}{a}\\c&d&u_2}\\
+&\xleftrightarrow{R_2 = R_2-cR_1}\myvec{1&\frac{b}{a}&\frac{u_1}{a}\\0&\frac{ad-bc}{a}&\frac{au_2-cu_1}{a}}\\
+&\xleftrightarrow{R_2=\frac{a}{ad-bc}R_2}\myvec{1&\frac{b}{a}&\frac{u_1}{a}\\0&1&\frac{au_2-cu_1}{ad-bc}}\\
+&\xleftrightarrow{R_1=R_1-\frac{b}{a}R_2}\myvec{1&0&\frac{du_1-bu_2}{ad-bc}\\0&1&\frac{au_2-cu_1}{ad-bc}}\label{eqsolve}\\
+\intertext{From \eqref{eqsolve} we get,}
+du_1-bu_2 & = 0\label{eqU1}\\
+au_2-cu_1 & = 0\label{eqU2}\\
+\intertext{Solving \eqref{eqU1} and \eqref{eqU2},}
+u_1 & = 0\\
+u_2 & = 0\\
+\intertext{Hence we get,}
+\vec{u} = \myvec{u_1\\u_2} &= \myvec{0\\0}\label{eqI4}
 \end{align}
-In \eqref{eqI1}, \eqref{eqI2}, \eqref{eqI3} and \eqref{compare}, we can see that it has only one trivial solution $x_1=x_2=0$. Hence proved, the equation $\vec{AX}$=0 has only one trivial solution $x_1=x_2=0$
-
-
+Thus $\vec{A}\vec{X}=\vec{u}$ holds true if and only if $\vec{u}=0$.\\
+In \eqref{eqI1}, \eqref{eqI2}, \eqref{eqI3} and \eqref{eqI4}, we can see that $\vec{A}\vec{X}=0$ has only one trivial solution i.e $x_1=x_2=0$ in all cases. Hence proved, the equation $\vec{AX}$=0 has only one trivial solution $x_1=x_2=0$
 \subsection{Solution 3}
 \textbf{Case 1: }Let, $a\not=0$ for $\vec{A}$. Given $ad-bc=0$, we can perform row reduction on augmented matrix of equation $\vec{AX}=0$ as follows,
 \begin{align}
