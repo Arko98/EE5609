@@ -192,8 +192,8 @@ Consider the system of equations $\vec{AX}$ = 0 where
 \end{align*}
 is a $2\times2$ matrix over the field $F$. Prove the following - 
 \begin{itemize}
-    \item If every entry of $\vec{A}$ is 0, then every pair $x1$ and $x2$ is a solution of $\vec{AX}$ = 0.
-    \item If $ad - bc \not=$ 0, then the system $\vec{AX}$ = 0 has only the trivial solution $x1 = x2 = 0$
+    \item If every entry of $\vec{A}$ is 0, then every pair $x_1$ and $x_2$ is a solution of $\vec{AX}$ = 0.
+    \item If $ad - bc \not=$ 0, then the system $\vec{AX}$ = 0 has only the trivial solution $x_1 = x_2 = 0$
     \item If $ad - bc = 0$ and some entry of $\vec{A}$ is different from 0, then there is a solution $x_1^0$ and $x_2^0$ such that $x1$ and  $x2$ is a solution if and only if there is a scalar $y$ such that $x_1 = yx_1^0$ and $x_2 = yx_2^0$
 \end{itemize}
 \section{\textbf{Solution}}
@@ -264,8 +264,9 @@ x_2 &= yx_2^0
 which is a solution of the equation $\vec{AX}=0$. \\
 \textbf{Case 2: }Let, $b\not=0$ for $\vec{A}$. Given $ad-bc=0$, we can perform row reduction on augmented matrix of equation $\vec{AX}=0$ as follows,
 \begin{align}
-\myvec{a&b&0\\c&d&0}&\xleftrightarrow{R_1 = \frac{1}{b}R_1}\myvec{\frac{a}{b}&1&0\\c&d&0}\\
-&\xleftrightarrow{R_2 = R_2-dR_1}\myvec{\frac{a}{b}&1&0\\0&0&0}\quad{\text{[$\because ad-bc=0$]}}\label{eq3}
+\myvec{a&b&0\\c&d&0}&\xleftrightarrow{C_1 \leftrightarrow C_2}\myvec{b&a&0\\d&c&0}\\
+&\xleftrightarrow{R_1 = \frac{1}{b}R_1}\myvec{1&\frac{a}{b}&0\\d&c&0}\\
+&\xleftrightarrow{R_2 = R_2-dR_1}\myvec{1&\frac{a}{b}&0\\0&0&0}\quad{\text{[$\because ad-bc=0$]}}\label{eq3}
 \end{align}
 Hence from \eqref{eq3}, $\vec{AX}$ = 0 if and only if 
 \begin{align}
@@ -292,8 +293,9 @@ which is a solution of the equation $\vec{AX}=0$. \\
 \textbf{Case 4: }Let, $d\not=0$ for $\vec{A}$. Given $ad-bc=0$, we can perform row reduction on augmented matrix of equation $\vec{AX}=0$ as follows,
 \begin{align}
 \myvec{a&b&0\\c&d&0}&\xleftrightarrow{R_1 \leftrightarrow R_2}\myvec{c&d&0\\a&b&0}\\
-&\xleftrightarrow{R_1 = \frac{1}{d}R_1}\myvec{\frac{c}{d}&1&0\\a&b&0}\\
-&\xleftrightarrow{R_2 = R_2-bR_1}\myvec{\frac{c}{d}&1&0\\0&0&0}\quad{\text{[$\because ad-bc=0$]}}\label{eq3}
+&\xleftrightarrow{C_1 \leftrightarrow C_2}\myvec{d&c&0\\b&a&0}\\
+&\xleftrightarrow{R_1 = \frac{1}{d}R_1}\myvec{1&\frac{c}{d}&0\\b&a&0}\\
+&\xleftrightarrow{R_2 = R_2-bR_1}\myvec{1&\frac{c}{d}&0\\0&0&0}\quad{\text{[$\because ad-bc=0$]}}\label{eq3}
 \end{align}
 Hence from \eqref{eq3}, $\vec{AX}$ = 0 if and only if 
 \begin{align}
