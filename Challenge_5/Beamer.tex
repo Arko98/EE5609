@@ -147,7 +147,9 @@ https://github.com/Arko98/EE5609/tree/master/Challenge_5
 \section{Problem}
 Show that the eigen values of $\vec{A^TA}$ are positive. 
 \section{Proof}
-Let, $\vec{A}$ is an arbitrary $m\times n$ matrix. Now consider the matrix $\vec{A^TA}$,
+Let, $\vec{A}$ is an arbitrary $m\times n$ matrix. Now consider the symmetric matrix $\vec{A^TA}$,
+\begin{comment}
+
 \begin{align}
 \intertext{for any n dimensional vector $\vec{z}$,}
 \vec{z^T}(\vec{A^TA})\vec{z} &= \vec{z^TA^T}\vec{Az}\\
@@ -164,15 +166,26 @@ Again,
 \vec{({A^TA})^T} = \vec{(A^T)(A^T)^T} = \vec{A^TA}\label{eqSym}
 \end{align}
 Hence, $\vec{A^TA}$ is symmetric. As every eigen value of a Hermitian matrix is real and every symmetric matrix is Hermitian then $\vec{A^TA}$ (being a symmetric and hence Hermitian) has real eigen values.\\
+
+\end{comment}
 Let $\lambda$ be a (real) eigenvalue of $\vec{B}=\vec{A^TA}$ and let $\vec{x}$ be a corresponding real eigen-vector hence,
 \begin{align}
 \vec{Bx} = \lambda \vec{x}\label{eq2}
 \intertext{Multiplying $\vec{x^T}$ in \eqref{eq2},}
 \vec{x^TBx} &= \lambda \vec{x^T}\vec{x}\\
 \implies\vec{x^TBx} &= \lambda \norm{\vec{x}}^2\\
-\implies\vec{x^T(A^TA)x} &= \lambda \norm{\vec{x}}^2 \qqaud{\text{[$\because\vec{B}=\vec{A^TA}$]}}\label{eqFinal}
+\implies\vec{x^T(A^TA)x} &= \lambda \norm{\vec{x}}^2 \qqaud{\text{[$\because\vec{B}=\vec{A^TA}$]}}\\
+\implies\vec{(x^TA^T)Ax} &= \lambda\norm{\vec{x}}^2\\
+\implies\vec{(Ax)^T(Ax)} &= \lambda\norm{\vec{x}}^2\\
+\implies\norm{\vec{Ax}}^2 &= \lambda\norm{\vec{x}}^2\label{eqFinal}
+\intertext{In \eqref{eqFinal} as $\norm{\vec{x}}^2 > 0$ then,}
+\lambda > 0
 \end{align}
+\begin{comment}
+
 When $\vec{A^TA}$ is positive definite (i.e columns of $\vec{A}$ are linearly independent) then, the left hand side of \eqref{eqFinal} is positive as $\vec{A^TA}$ is positive-definite and $\vec{x}$ is a nonzero vector as it is an eigen-vector.\\
-Also if $\vec{A}$ has linearly independent columns then $\vec{A^TA}$ will be invertible and hence a non-singular matrix, so $\norm{\vec{x}}$ cannot be zero in \eqref{eqFinal}. Since $\norm{\vec{x}}^2$ is positive, hence all eigen-values must be positive.\\
-Hence proved.
+Also if $\vec{A}$ has linearly independent columns then $\vec{A^TA}$ will be invertible and hence a non-singular matrix, so $\norm{\vec{x}}$ cannot be zero in \eqref{eqFinal}. Since $\norm{\vec{Ax}}^2$ is positive, hence all eigen-values must be positive.\\
+
+\end{comment}
+Hence proved that all eigen values of $\vec{A^TA}$ are positive.
 \end{document}
