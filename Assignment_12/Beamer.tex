@@ -192,9 +192,9 @@ Consider the system of equations $\vec{AX}$ = 0 where
 \end{align*}
 is a $2\times2$ matrix over the field $F$. Prove the following - 
 \begin{itemize}
-    \item If every entry of $\vec{A}$ is 0, then every pair $(x1, x2)$ is a solution of $\vec{AX}$ = 0.
+    \item If every entry of $\vec{A}$ is 0, then every pair $x1$ and $x2$ is a solution of $\vec{AX}$ = 0.
     \item If $ad - bc \not=$ 0, then the system $\vec{AX}$ = 0 has only the trivial solution $x1 = x2 = 0$
-    \item If $ad - bc = 0$ and some entry of $\vec{A}$ is different from 0, then there is a solution $(x_1^0,x_2^0)$ such that $(x1, x2)$ is a solution if and only if there is a scalar $y$ such that $x_1 = yx_1^0$ and $x_2 = yx_2^0$
+    \item If $ad - bc = 0$ and some entry of $\vec{A}$ is different from 0, then there is a solution $x_1^0$ and $x_2^0$ such that $x1$ and  $x2$ is a solution if and only if there is a scalar $y$ such that $x_1 = yx_1^0$ and $x_2 = yx_2^0$
 \end{itemize}
 \section{\textbf{Solution}}
 \subsection{Solution 1}
@@ -203,7 +203,7 @@ If every entry of $\vec{A}$ is 0 then the equation $\vec{AX}$ = 0 becomes,
 \myvec{0&0\\0&0}\myvec{x_1\\x_2} &=0\\
 \implies0.x_1+0.x_2 &= 0 \qquad{\text{$\forall x_1,x_2 \in F$}}
 \end{align}
-Hence proved, every pair $(x_1,x_2)$ is a solution for the equation $\vec{AX}$ = 0.
+Hence proved, every pair $x_1$ and $x_2$ is a solution for the equation $\vec{AX}$ = 0.
 \subsection{Solution 2}
 \textbf{Case 1: }Let $a=0$. Since $ad-bc\not=0$. As $bc\not=0$ therefore $b\not=0$ and $c\not=0$. Hence, we can perform row reduction on the augmented matrix of equation $\vec{AX}$=0 as follows,
 \begin{align}
@@ -211,6 +211,8 @@ Hence proved, every pair $(x_1,x_2)$ is a solution for the equation $\vec{AX}$ =
 &\xleftrightarrow[R_2 =\frac{1}{b}R_2]{R_1 =\frac{1}{c}R_1}\myvec{1&\frac{d}{c}&0\\0&1&0}\\
 &\xleftrightarrow{R_1=R_1 - \frac{d}{c}R_2}\myvec{1&0&0\\0&1&0}\label{eqI1}
 \end{align}
+\begin{comment}
+
 \textbf{Case 2: }Let $a\not=0$. Hence, we can perform row reduction on the augmented matrix of equation $\vec{AX}$=0 as follows,
 \begin{align}
 \myvec{a&b&0\\c&d&0}&\xleftrightarrow{R_1 = \frac{1}{a}R_1}\myvec{1&\frac{b}{a}&0\\c&d&0}\\
@@ -225,7 +227,9 @@ Hence proved, every pair $(x_1,x_2)$ is a solution for the equation $\vec{AX}$ =
 &\xleftrightarrow{R_2=\frac{a}{ad-bc}R_2}\myvec{1&\frac{b}{a}&0\\0&1&0}\\
 &\xleftrightarrow{R_1 = R_1-\frac{b}{a}R_2}\myvec{1&0&0\\0&1&0}\label{eqI3}
 \end{align}
-\textbf{Case 4: }Let $a,b,c,d\not=0$. Considering the following case,
+
+\end{comment}
+\textbf{Case 2: }Let $a,b,c,d\not=0$. Considering the following case,
 \begin{align}
 \vec{A}\vec{X} = \vec{u} \not= 0\\
 \implies\myvec{a&b\\c&d}\myvec{x_1\\x_2} &=\myvec{u_1\\u_2}\not= \vec{0}\label{eqComp}\\
@@ -244,7 +248,7 @@ u_2 & = 0\\
 \vec{u} = \myvec{u_1\\u_2} &= \myvec{0\\0}\label{eqI4}
 \end{align}
 Thus $\vec{A}\vec{X}=\vec{u}$ holds true if and only if $\vec{u}=0$.\\
-In \eqref{eqI1}, \eqref{eqI2}, \eqref{eqI3} and \eqref{eqI4}, we can see that $\vec{A}\vec{X}=0$ has only one trivial solution i.e $x_1=x_2=0$ in all cases. Hence proved, the equation $\vec{AX}$=0 has only one trivial solution $x_1=x_2=0$
+In \eqref{eqI1} and \eqref{eqI4}, we can see that $\vec{A}\vec{X}=0$ has only one trivial solution i.e $x_1=x_2=0$ in all cases. Hence proved, the equation $\vec{AX}$=0 has only one trivial solution $x_1=x_2=0$
 \subsection{Solution 3}
 \textbf{Case 1: }Let, $a\not=0$ for $\vec{A}$. Given $ad-bc=0$, we can perform row reduction on augmented matrix of equation $\vec{AX}=0$ as follows,
 \begin{align}
