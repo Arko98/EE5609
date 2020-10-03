@@ -173,7 +173,6 @@ Let $\lambda$ be a (real) eigenvalue of $\vec{B}=\vec{A^TA}$ and let $\vec{x}$ b
 \implies\vec{x^T(A^TA)x} &= \lambda \norm{\vec{x}}^2 \qqaud{\text{[$\because\vec{B}=\vec{A^TA}$]}}\label{eqFinal}
 \end{align}
 When $\vec{A^TA}$ is positive definite (i.e columns of \vec{A} are linearly independent) then, the left hand side of \eqref{eqFinal} is positive as $\vec{A^TA}$ is positive-definite and \vec{x} is a nonzero vector as it is an eigen-vector.\\
-Also $\norm{\vec{x}}$ cannot be zero if $\vec{A^TA}$ has linearly independent columns because then it will be invertible and hence a non-singular matrix.
-Since $\norm{\vec{x}}^2$ is positive, hence all eigen-values must be positive.\\
+Also if $\vec{A}$ has linearly independent columns then $\vec{A^TA}$ will be invertible and hence a non-singular matrix, so $\norm{\vec{x}}$ cannot be zero in \eqref{eqFinal}. Since $\norm{\vec{x}}^2$ is positive, hence all eigen-values must be positive.\\
 Hence proved.
 \end{document}
