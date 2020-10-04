@@ -252,9 +252,9 @@ In \eqref{eqI1} and \eqref{eqI4}, we can see that $\vec{A}\vec{X}=0$ has only on
 \textbf{Case 1: }Let, $a\not=0$ for $\vec{A}$. Given $ad-bc=0$, we can perform row reduction on augmented matrix of equation $\vec{AX}=0$ as follows,
 \begin{align}
 \myvec{a&b&0\\c&d&0}&\xleftrightarrow{R_1 = \frac{1}{a}R_1}\myvec{1&\frac{b}{a}&0\\c&d&0}\\
-&\xleftrightarrow{R_2 = R_2-cR_1}\myvec{1&\frac{b}{a}&0\\0&0&0}\quad{\text{[$\because ad-bc=0$]}}\label{eq3}
+&\xleftrightarrow{R_2 = R_2-cR_1}\myvec{1&\frac{b}{a}&0\\0&0&0}\quad{\text{[$\because ad-bc=0$]}}\label{eqL3}
 \end{align}
-Hence from \eqref{eq3}, $\vec{AX}$ = 0 if and only if 
+Hence from \eqref{eqL3}, $\vec{AX}$ = 0 if and only if 
 \begin{align}
 x_1 &= -\frac{b}{a}x_2 \qquad{\text{[$a\not=0$]}}
 \intertext{Letting $x_1^0=-\frac{b}{a}$ and $x_2^0 = 1$ we get for $y=1$,}
@@ -264,11 +264,9 @@ x_2 &= yx_2^0
 which is a solution of the equation $\vec{AX}=0$. \\
 \textbf{Case 2: }Let, $b\not=0$ for $\vec{A}$. Given $ad-bc=0$, at first we multiply by elementary matrix to change the columns and the we can perform row reduction on augmented matrix of equation $\vec{AX}=0$ as follows,
 \begin{align}
-\myvec{a&b&0\\c&d&0}\myvec{0&1&0\\1&0&0\\0&0&1}&\xleftrightarrow{C_1 \leftrightarrow C_2}\myvec{b&a&0\\d&c&0}\\
-&\xleftrightarrow{R_1 = \frac{1}{b}R_1}\myvec{1&\frac{a}{b}&0\\d&c&0}\\
-&\xleftrightarrow{R_2 = R_2-dR_1}\myvec{1&\frac{a}{b}&0\\0&0&0}\quad{\text{[$\because ad-bc=0$]}}\label{eq3}
+\myvec{a&b&0\\c&d&0}\myvec{0&1&0\\1&0&0\\0&0&1}&=\myvec{b&a&0\\d&c&0}\label{eqNow}
 \end{align}
-Hence from \eqref{eq3}, $\vec{AX}$ = 0 if and only if 
+Hence using the result obtained from \eqref{eqL3} we can conclude for \eqref{eqNow}, $\vec{AX}$ = 0 if and only if 
 \begin{align}
 x_2 &= -\frac{a}{b}x_1 \qquad{\text{[$b\not=0$]}}
 \intertext{Letting $x_2^0=-\frac{a}{b}$ and $x_1^0 = 1$ we get for $y=1$,}
@@ -280,9 +278,9 @@ which is a solution of the equation $\vec{AX}=0$. \\
 \begin{align}
 \myvec{a&b&0\\c&d&0}&\xleftrightarrow{R_1 \leftrightarrow R_2}\myvec{c&d&0\\a&b&0}\\
 &\xleftrightarrow{R_1 = \frac{1}{c}R_1}\myvec{1&\frac{d}{c}&0\\a&b&0}\\
-&\xleftrightarrow{R_2 = R_2-aR_1}\myvec{1&\frac{d}{c}&0\\0&0&0}\quad{\text{[$\because ad-bc=0$]}}\label{eq3}
+&\xleftrightarrow{R_2 = R_2-aR_1}\myvec{1&\frac{d}{c}&0\\0&0&0}\quad{\text{[$\because ad-bc=0$]}}\label{eqL4}
 \end{align}
-Hence from \eqref{eq3}, $\vec{AX}$ = 0 if and only if 
+Hence from \eqref{eqL4}, $\vec{AX}$ = 0 if and only if 
 \begin{align}
 x_1 &= -\frac{d}{c}x_2 \qquad{\text{[$a\not=0$]}}
 \intertext{Letting $x_1^0=-\frac{d}{c}$ and $x_2^0 = 1$ we get for $y=1$,}
@@ -292,12 +290,10 @@ x_2 &= yx_2^0
 which is a solution of the equation $\vec{AX}=0$. \\
 \textbf{Case 4: }Let, $d\not=0$ for $\vec{A}$. Given $ad-bc=0$, at first we multiply by elementary matrix to change the columns and then we can perform row reduction on augmented matrix of equation $\vec{AX}=0$ as follows,
 \begin{align}
-\myvec{a&b&0\\c&d&0}\myvec{0&1&0\\1&0&0\\0&0&1}&\xleftrightarrow{C_1 \leftrightarrow C_2}\myvec{b&a&0\\d&c&0}\\
-&\xleftrightarrow{R_1 \leftrightarrow R_2}\myvec{d&c&0\\b&a&0}\\
-&\xleftrightarrow{R_1 = \frac{1}{d}R_1}\myvec{1&\frac{c}{d}&0\\b&a&0}\\
-&\xleftrightarrow{R_2 = R_2-bR_1}\myvec{1&\frac{c}{d}&0\\0&0&0}\quad{\text{[$\because ad-bc=0$]}}\label{eq3}
+\myvec{a&b&0\\c&d&0}\myvec{0&1&0\\1&0&0\\0&0&1}&=\myvec{b&a&0\\d&c&0}\\
+&\xleftrightarrow{R_1\leftrightarrow R_2}\myvec{d&c&0\\b&a&0}\label{eqNow2}
 \end{align}
-Hence from \eqref{eq3}, $\vec{AX}$ = 0 if and only if 
+Hence using the result from \eqref{eqL4} we can conclude for \eqref{eqNow2}, $\vec{AX}$ = 0 if and only if 
 \begin{align}
 x_2 &= -\frac{c}{d}x_1 \qquad{\text{[$a\not=0$]}}
 \intertext{Letting $x_2^0=-\frac{c}{d}$ and $x_1^0 = 1$ we get for $y=1$,}
