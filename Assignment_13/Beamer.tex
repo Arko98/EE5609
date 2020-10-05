@@ -186,65 +186,37 @@ https://github.com/Arko98/EE5609/blob/master/Assignment_13
 \end{lstlisting}
 
 \section{\textbf{Problem}}
-Let $\vec{A}$ and $\vec{B}$ be $2 \times 2$ matrices such that $\vec{AB}=\vec{I}$. Prove that $\vec{BA}=\vec{I}$
+Let $\vec{A}$ and $\vec{B}$ be $n \times n$ matrices such that $\vec{AB}=\vec{I}$. Prove that $\vec{BA}=\vec{I}$
 \section{\textbf{Solution}}
-\subsection{Solution}
-Let $\vec{A}$ and $\vec{B}$ such that,
+\subsection{Solution 1}
+Since $\vec{AB} = \vec{I}$, hence $\vec{AB}$ has range equal to the full $n$ - dimensional space. Hence the range of $\vec{B}$ is also $n$ - dimensional space. If $\vec{B}$ did not have $n$ - dimensional space as it's range then a set of $(n-1)$ vectors would span the range of $\vec{B}$, so the range of $\vec{AB}$, which is the image under $\vec{A}$ of the range of $\vec{B}$, would also be spanned by a set of $(n-1)$ vectors, hence would have dimension less than $n$. Hence we can write,
 \begin{align}
-\vec{A} &= \myvec{a_1&a_2\\a_3&a_4}\label{eqA}\\
-\vec{B} &= \myvec{b_1&b_2\\b_3&b_4}\label{eqB}.
-\intertext{Since $\vec{AB}=\vec{I}$ we have,}
-\det{(\vec{A})} &\not=0\\
-\implies a_1a_4-a_2a_3 &\not=0 \label{cond1}
-\intertext{And,}
-\det{(\vec{B})} &\not=0\\
-\implies b_1b_4-b_2b_3 &\not=0 \label{cond2}
-\end{align}
-Now, from $\vec{AB}=\vec{I}$ we have,
-\begin{align}
-\myvec{a_1&a_2\\a_3&a_4}\myvec{b_1&b_2\\b_3&b_4}&=\myvec{1&0\\0&1}
-\end{align}
-Hence we have the following two system of linear equations,
-\begin{align}
-a_1b_1 +a_2b_3 &= 1\label{eqS11}\\
-a_3b_1 +a_4b_3 &= 0\label{eqS12}\\
-\intertext{And,}
-a_1b_2 +a_2b_4 &= 0\label{eqS21}\\
-a_3b_2 +a_4b_4 &= 1\label{eqS22}
-\end{align}
-Solving \eqref{eqS11} and \eqref{eqS12} we get,
-\begin{align}
-b_1 &= \frac{a_4}{a_1a_4-a_2a_3}\label{sol1}\\
-b_3 &= -\frac{a_3}{a_1a_4-a_2a_3}\label{sol2}
-\end{align}
-Again solving \eqref{eqS21} and \eqref{eqS22} we get,
-\begin{align}
-b_2 &= -\frac{a_2}{a_1a_4-a_2a_3}\label{sol3}\\
-b_4 &= \frac{a_1}{a_1a_4-a_2a_3}\label{sol4}
-\end{align}
-Hence we get,
-\begin{align}
-\vec{BA} &= \myvec{\frac{a_4}{a_1a_4-a_2a_3}&-\frac{a_2}{a_1a_4-a_2a_3}\\-\frac{a_3}{a_1a_4-a_2a_3}&\frac{a_1}{a_1a_4-a_2a_3}}\myvec{a_1&a_2\\a_3&a_4}\\
-&= \myvec{\frac{a_1a_4-a_2a_3}{a_1a_4-a_2a_3}&\frac{a_2a_4-a_2a_4}{a_1a_4-a_2a_3}\\\frac{a_1a_3-a_1a_3}{a_1a_4-a_2a_3}&\frac{a_1a_4-a_2a_3}{a_1a_4-a_2a_3}}\\
-&= \myvec{1&0\\0&1}\\
-\implies\vec{BA}&=\vec{I}
+\vec{B} &=\vec{BI}\\
+&=\vec{B(AB)} \quad{\text{[$\because \vec{AB} = \vec{I}$]}}\\
+&=\vec{(BA)B} \label{eq1}
+\intertext{Hence from \eqref{eq1},}
+\vec{B}-\vec{(BA)B} &= \vec{0}\\
+\vec{(I-BA)B} &= \vec{0} \quad{\text{[Distributive Law]}}\label{eq2}\\
+\intertext{Since range of $\vec{B}$ is $n$ - dimensional space hence $\vec{B}\not=\vec{0}$. Thus we can write from \eqref{eq2},}
+\vec{I-BA} &= \vec{0}\\
+\vec{BA} &= \vec{I}
 \end{align}
 Hence Proved.
-\subsection{Alternative Solution}
-Since $\vec{AB} = \vec{I}$ we have,
+
+\subsection{Solution 2}
+Let $\vec{BX}=0$ be a system of linear equation with $n$ unknowns and $n$ equations as $\vec{B}$ is $n \times n$ matrix. Hence,
 \begin{align}
-\det{(\vec{A})}\det{(\vec{B})} &= \det{(\vec{I})}\label{eqDet}\\
-\intertext{Hence \eqref{eqDet} implies,}
-\det{(\vec{A})} \not= 0\label{detA}\\
-\det{(\vec{B})} \not= 0\label{detB}
+\vec{BX}&=0 \label{eqMain}\\
+\implies\vec{A(BX)} &= 0\\
+\implies\vec{(AB)X} &= 0\\
+\implies\vec{IX} &= 0 \quad{\text{[$\because \vec{AB} = \vec{I}$]}}\\
+\implies\vec{X} &= 0\label{independent}
 \end{align}
-$\vec{A}$ and $\vec{B}$ both are $2 \times 2$  square matrices and from \eqref{detA} and \eqref{detB}, both $\vec{A}$ and $\vec{B}$ are invertible. Hence,
+From \eqref{independent} since $\vec{X}=0$ is the only solution of \eqref{eqMain}, hence $rank(\vec{B}) = n$. Which implies all columns of $\vec{B}$ are linearly independent. Hence $\vec{B}$ is invertible. Therefore, every left inverse of $\vec{B}$ is also a right inverse of $\vec{B}$. Therefore given that,
 \begin{align}
-\vec{I}&=\vec{BB^{-1}}\\
-&=\vec{BIB^{-1}}\\
-&=\vec{B(AB)B^{-1}}\\
-&=\vec{BA(BB^{-1})}\\
-&=\vec{BA}
+\vec{AB} &= \vec{I} \quad{\text{[Where \vec{A} is the left inverse of \vec{B}]}}\label{Inverse}\\
+\intertext{We can conclude from \eqref{Inverse},}
+\vec{BA} &= \vec{I} \quad{\text{[Where \vec{A} is the right inverse of \vec{B}]}}
 \end{align}
 Hence Proved.
 \end{document}
