@@ -188,6 +188,7 @@ https://github.com/Arko98/EE5609/blob/master/Assignment_13
 \section{\textbf{Problem}}
 Let $\vec{A}$ and $\vec{B}$ be $n \times n$ matrices such that $\vec{AB}=\vec{I}$. Prove that $\vec{BA}=\vec{I}$
 \section{\textbf{Solution}}
+\begin{comment}
 \subsection{Solution 1}
 Since $\vec{AB} = \vec{I}$, hence $\vec{AB}$ has range equal to the full $n$ - dimensional space. Hence the range of $\vec{B}$ is also $n$ - dimensional space. If $\vec{B}$ did not have $n$ - dimensional space as it's range then a set of $(n-1)$ vectors would span the range of $\vec{B}$, so the range of $\vec{AB}$, which is the image under $\vec{A}$ of the range of $\vec{B}$, would also be spanned by a set of $(n-1)$ vectors, hence would have dimension less than $n$. Hence we can write,
 \begin{align}
@@ -202,8 +203,7 @@ Since $\vec{AB} = \vec{I}$, hence $\vec{AB}$ has range equal to the full $n$ - d
 \vec{BA} &= \vec{I}
 \end{align}
 Hence Proved.
-
-\subsection{Solution 2}
+\end{comment}
 Let $\vec{BX}=0$ be a system of linear equation with $n$ unknowns and $n$ equations as $\vec{B}$ is $n \times n$ matrix. Hence,
 \begin{align}
 \vec{BX}&=0 \label{eqMain}\\
@@ -212,11 +212,17 @@ Let $\vec{BX}=0$ be a system of linear equation with $n$ unknowns and $n$ equati
 \implies\vec{IX} &= 0 \quad{\text{[$\because \vec{AB} = \vec{I}$]}}\\
 \implies\vec{X} &= 0\label{independent}
 \end{align}
-From \eqref{independent} since $\vec{X}=0$ is the only solution of \eqref{eqMain}, hence $rank(\vec{B}) = n$. Which implies all columns of $\vec{B}$ are linearly independent. Hence $\vec{B}$ is invertible. Therefore, every left inverse of $\vec{B}$ is also a right inverse of $\vec{B}$. Therefore given that,
+From \eqref{independent} since $\vec{X}=0$ is the only solution of \eqref{eqMain}, hence $rank(\vec{B}) = n$. Which implies all columns of $\vec{B}$ are linearly independent. Hence $\vec{B}$ is invertible. Therefore, every left inverse of $\vec{B}$ is also a right inverse of $\vec{B}$. Hence there exists a $n \times n$ matrix $\vec{C}$ such that,
 \begin{align}
-\vec{AB} &= \vec{I} \quad{\text{[Where \vec{A} is the left inverse of \vec{B}]}}\label{Inverse}\\
-\intertext{We can conclude from \eqref{Inverse},}
-\vec{BA} &= \vec{I} \quad{\text{[Where \vec{A} is the right inverse of \vec{B}]}}
+    \vec{BC} = \vec{CB} = \vec{I}\label{eqi}
+\end{align}
+Or $\vec{C}=\vec{B^{-1}}$. Again given that $\vec{AB}=\vec{I}$. Hence from the given equation and \eqref{eqi} we can say,
+\begin{align}
+\vec{CB}&=\vec{AB}\\
+\implies\vec{C}&=\vec{A} \quad{\text{[Where \vec{A} is the left inverse of \vec{B}]}}\label{Inverse}\\
+\intertext{Hence $\vec{A}$ is also the right inverse of $\vec{B}$. Therefore,}
+\vec{BC} &= \vec{BA} = \vec{I}\\
+\implies\vec{BA} &= \vec{I}
 \end{align}
 Hence Proved.
 \end{document}
