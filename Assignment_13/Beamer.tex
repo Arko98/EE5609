@@ -216,13 +216,14 @@ From \eqref{independent} since $\vec{X}=0$ is the only solution of \eqref{eqMain
 \begin{align}
     \vec{BC} = \vec{CB} = \vec{I}\label{eqi}
 \end{align}
-Or $\vec{C}=\vec{B^{-1}}$. Again given that $\vec{AB}=\vec{I}$. Hence from the given equation and \eqref{eqi} we can say,
+Again given that $\vec{AB}=\vec{I}$. Hence,
 \begin{align}
-\vec{CB}&=\vec{AB}\\
-\implies\vec{C}&=\vec{A} \quad{\text{[Where \vec{A} is the left inverse of \vec{B}]}}\label{Inverse}\\
-\intertext{Hence $\vec{A}$ is also the right inverse of $\vec{B}$. Therefore,}
-\vec{BC} &= \vec{BA} = \vec{I}\\
-\implies\vec{BA} &= \vec{I}
+\vec{AB} &= \vec{I}\\
+\implies\vec{ABC} &= \vec{C}\\
+\implies\vec{A(BC)} &= \vec{C}\\
+\implies\vec{A} &= \vec{C}\label{eqVal} \qquad{\text{$[\because\vec{BC}=\vec{I}]$}}
+\intertext{Hence using \eqref{eqVal} and \eqref{eqi} we can write,}
+\vec{BA} &= \vec{I}
 \end{align}
 Hence Proved.
 \end{document}
