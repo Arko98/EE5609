@@ -149,7 +149,7 @@ Given two $n \times n$ matrices $\vec{A}$ and $\vec{B}$ prove the following usin
 \begin{itemize}
     \item $\det\vec{(AB)} = \det\vec{(A)}\det\vec{(B)}$
     \item $\det\vec{(A^T)} = \det\vec{(A)}$
-    \item If $\vec{A}$ is a matrix with orthonormal columns then $\det\vec{(A)} = 1$
+    \item If $\vec{A}$ is a matrix with orthonormal columns then $|\det\vec{(A)}| = 1$
 \end{itemize}
 \section{Proof}
 \subsection{Proof 1}
@@ -164,7 +164,31 @@ Given two $n \times n$ matrices $\vec{A}$ and $\vec{B}$ prove the following usin
 \begin{align}
     \vec{A} = \vec{E_k}\vec{E_{k-1}}\dots\vec{E_1}\label{eq2}
 \end{align}
-Again, If $\vec{E}$ represents an elementary row operation and \vec{A} is a $n \times n$ matrix then,
+Now, the determinant of an elementary matrix $\vec{E}$ is given as follows -
+\begin{align}
+\intertext{If $\vec{E}$ interchanges two rows}
+\det(\vec{E}) &= -1\label{e1}
+\intertext{If $\vec{E}$ multiplies a row with nonzero constant $c$}
+\det(\vec{E}) &= c\label{e2}
+\intertext{If $\vec{E}$ multiplies Row i by nonzero constant $c$ and adds to Row j}
+\det(\vec{E}) &= 1\label{e3}
+\end{align}
+Now, if $\vec{A}$ interchanges two rows and $\vec{E}$ is the corresponding elementary matrix then,
+\begin{align}
+\det(\vec{EA}) &= -\det(\vec{A})\\
+\implies\det(\vec{EA}) &= \det(\vec{E})\det(\vec{A})\quad{\text{[From \eqref{e1}]}}\label{a}
+\end{align}
+If we multiply the $i$th row of $\vec{A}$ by nonzero constant $c$ and $\vec{E}$ is the corresponding elementary matrix then,
+\begin{align}
+\det(\vec{EA}) &= c\det(\vec{A}) \quad{\text{[By property]}}\\
+\implies\det(\vec{EA}) &= \det(\vec{E})\det(\vec{A})\quad{\text{[From \eqref{e2}]}}\label{b}
+\end{align}
+Lastly, if we multiply the $i$th row of $\vec{A}$ by nonzero constant $c$ and add it to $j$th row of $\vec{A}$ and $\vec{E}$ is the corresponding elementary matrix then,
+\begin{align}
+\det(\vec{EA}) &= \det(\vec{A}) \quad{\text{[By property]}}\\
+\implies\det(\vec{EA}) &= \det(\vec{E})\det(\vec{A})\quad{\text{[From \eqref{e3}]}}\label{c}
+\end{align}
+Hence, from \eqref{a}, \eqref{b} and \eqref{c} we get, if elementary matrix $\vec{E}$ represents an elementary row operation and \vec{A} is a $n \times n$ matrix then,
 \begin{align}
     \det(\vec{EA}) = \det(\vec{E})\det(\vec{A}) \label{Theorem}
 \end{align}
@@ -215,7 +239,7 @@ Hence, we can write from \eqref{eq4} and \eqref{eqI},
 \implies\det(\vec{\vec{A^T}\vec{A}}) &= 1\\
 \implies\det(\vec{\vec{A^T})\det(\vec{A}}) &= 1 \quad{\text{[By Proof 1]}}\\
 \implies\det(\vec{\vec{A})\det(\vec{A}}) &= 1 \quad{\text{[By Proof 2]}}\\
-\implies\det(\vec{A}) &= 1\label{proof3}
+\implies|\det(\vec{A})| &= 1\label{proof3}
 \end{align}
 Hence from \eqref{proof3} Proved.
 \end{document}
