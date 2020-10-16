@@ -1,0 +1,250 @@
+\documentclass[journal,12pt,twocolumn]{IEEEtran}
+%
+\usepackage{setspace}
+\usepackage{gensymb}
+\usepackage{siunitx}
+\usepackage{tkz-euclide} 
+\usepackage{textcomp}
+\usepackage{standalone}
+\usetikzlibrary{calc}
+
+%\doublespacing
+\singlespacing
+
+%\usepackage{graphicx}
+%\usepackage{amssymb}
+%\usepackage{relsize}
+\usepackage[cmex10]{amsmath}
+%\usepackage{amsthm}
+%\interdisplaylinepenalty=2500
+%\savesymbol{iint}
+%\usepackage{txfonts}
+%\restoresymbol{TXF}{iint}
+%\usepackage{wasysym}
+\usepackage{amsthm}
+%\usepackage{iithtlc}
+\usepackage{mathrsfs}
+\usepackage{txfonts}
+\usepackage{stfloats}
+\usepackage{bm}
+\usepackage{cite}
+\usepackage{cases}
+\usepackage{subfig}
+%\usepackage{xtab}
+\usepackage{longtable}
+\usepackage{multirow}
+%\usepackage{algorithm}
+%\usepackage{algpseudocode}
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{steinmetz}
+\usepackage{tikz}
+\usepackage{circuitikz}
+\usepackage{verbatim}
+\usepackage{tfrupee}
+\usepackage[breaklinks=true]{hyperref}
+%\usepackage{stmaryrd}
+\usepackage{tkz-euclide} % loads  TikZ and tkz-base
+%\usetkzobj{all}
+\usetikzlibrary{calc,math}
+\usepackage{listings}
+    \usepackage{color}                                            %%
+    \usepackage{array}                                            %%
+    \usepackage{longtable}                                        %%
+    \usepackage{calc}                                             %%
+    \usepackage{multirow}                                         %%
+    \usepackage{hhline}                                           %%
+    \usepackage{ifthen}                                           %%
+  %optionally (for landscape tables embedded in another document): %%
+    \usepackage{lscape}     
+\usepackage{multicol}
+\usepackage{chngcntr}
+\usepackage{amsmath}
+\usepackage{cleveref}
+%\usepackage{enumerate}
+
+%\usepackage{wasysym}
+%\newcounter{MYtempeqncnt}
+\DeclareMathOperator*{\Res}{Res}
+%\renewcommand{\baselinestretch}{2}
+\renewcommand\thesection{\arabic{section}}
+\renewcommand\thesubsection{\thesection.\arabic{subsection}}
+\renewcommand\thesubsubsection{\thesubsection.\arabic{subsubsection}}
+
+\renewcommand\thesectiondis{\arabic{section}}
+\renewcommand\thesubsectiondis{\thesectiondis.\arabic{subsection}}
+\renewcommand\thesubsubsectiondis{\thesubsectiondis.\arabic{subsubsection}}
+
+% correct bad hyphenation here
+\hyphenation{op-tical net-works semi-conduc-tor}
+\def\inputGnumericTable{}                                 %%
+
+\lstset{
+%language=C,
+frame=single, 
+breaklines=true,
+columns=fullflexible
+}
+%\lstset{
+%language=tex,
+%frame=single, 
+%breaklines=true
+%}
+\usepackage{graphicx}
+\usepackage{pgfplots}
+
+\begin{document}
+%
+
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{problem}{Problem}
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{example}{Example}[section]
+\newtheorem{definition}[problem]{Definition}
+%\newtheorem{thm}{Theorem}[section] 
+%\newtheorem{defn}[thm]{Definition}
+%\newtheorem{algorithm}{Algorithm}[section]
+%\newtheorem{cor}{Corollary}
+\newcommand{\BEQA}{\begin{eqnarray}}
+\newcommand{\EEQA}{\end{eqnarray}}
+\newcommand{\define}{\stackrel{\triangle}{=}}
+\bibliographystyle{IEEEtran}
+%\bibliographystyle{ieeetr}
+\providecommand{\mbf}{\mathbf}
+\providecommand{\pr}[1]{\ensuremath{\Pr\left(#1\right)}}
+\providecommand{\qfunc}[1]{\ensuremath{Q\left(#1\right)}}
+\providecommand{\sbrak}[1]{\ensuremath{{}\left[#1\right]}}
+\providecommand{\lsbrak}[1]{\ensuremath{{}\left[#1\right.}}
+\providecommand{\rsbrak}[1]{\ensuremath{{}\left.#1\right]}}
+\providecommand{\brak}[1]{\ensuremath{\left(#1\right)}}
+\providecommand{\lbrak}[1]{\ensuremath{\left(#1\right.}}
+\providecommand{\rbrak}[1]{\ensuremath{\left.#1\right)}}
+\providecommand{\cbrak}[1]{\ensuremath{\left\{#1\right\}}}
+\providecommand{\lcbrak}[1]{\ensuremath{\left\{#1\right.}}
+\providecommand{\rcbrak}[1]{\ensuremath{\left.#1\right\}}}
+\theoremstyle{remark}
+\newtheorem{rem}{Remark}
+\newcommand{\sgn}{\mathop{\mathrm{sgn}}}
+
+
+
+\providecommand{\abs}[1]{\left\vert#1\right\vert}
+\providecommand{\res}[1]{\Res\displaylimits_{#1}} 
+\providecommand{\norm}[1]{\left\lVert#1\right\rVert}
+%\providecommand{\norm}[1]{\lVert#1\rVert}
+\providecommand{\mtx}[1]{\mathbf{#1}}
+\providecommand{\mean}[1]{E\left[ #1 \right]}
+\providecommand{\fourier}{\overset{\mathcal{F}}{ \rightleftharpoons}}
+%\providecommand{\hilbert}{\overset{\mathcal{H}}{ \rightleftharpoons}}
+\providecommand{\system}{\overset{\mathcal{H}}{ \longleftrightarrow}}
+	%\newcommand{\solution}[2]{\textbf{Solution:}{#1}}
+\newcommand{\solution}{\noindent \textbf{Solution: }}
+\newcommand{\cosec}{\,\text{cosec}\,}
+\providecommand{\dec}[2]{\ensuremath{\overset{#1}{\underset{#2}{\gtrless}}}}
+\newcommand{\myvec}[1]{\ensuremath{\begin{pmatrix}#1\end{pmatrix}}}
+\newcommand{\mydet}[1]{\ensuremath{\begin{vmatrix}#1\end{vmatrix}}}
+%\numberwithin{equation}{section}
+\numberwithin{equation}{subsection}
+%\numberwithin{problem}{section}
+%\numberwithin{definition}{section}
+\makeatletter
+\@addtoreset{figure}{problem}
+\makeatother
+\let\StandardTheFigure\thefigure
+\let\vec\mathbf
+%\renewcommand{\thefigure}{\theproblem.\arabic{figure}}
+\renewcommand{\thefigure}{\theproblem}
+%\setlist[enumerate,1]{before=\renewcommand\theequation{\theenumi.\arabic{equation}}
+%\counterwithin{equation}{enumi}
+%\renewcommand{\theequation}{\arabic{subsection}.\arabic{equation}}
+\def\putbox#1#2#3{\makebox[0in][l]{\makebox[#1][l]{}\raisebox{\baselineskip}[0in][0in]{\raisebox{#2}[0in][0in]{#3}}}}
+     \def\rightbox#1{\makebox[0in][r]{#1}}
+     \def\centbox#1{\makebox[0in]{#1}}
+     \def\topbox#1{\raisebox{-\baselineskip}[0in][0in]{#1}}
+     \def\midbox#1{\raisebox{-0.5\baselineskip}[0in][0in]{#1}}
+\vspace{3cm}
+\title{Matrix Theory (EE5609) Assignment 14}
+\author{Arkadipta De\\MTech Artificial Intelligence\\AI20MTECH14002}
+
+\maketitle
+\newpage
+%\tableofcontents
+\bigskip
+\renewcommand{\thefigure}{\theenumi}
+\renewcommand{\thetable}{\theenumi}
+
+\begin{abstract}
+This document proves the existence of inverse of Hilbert Matrix.  
+\end{abstract}
+All the codes for the figure in this document can be found at
+\begin{lstlisting}
+https://github.com/Arko98/EE5609/blob/master/Assignment_14
+\end{lstlisting}
+\section{\textbf{Problem}}
+Prove that the following matrix is invertible and $\vec{A^{-1}}$ has integer entries.\\
+\begin{align*}
+\vec{A} = \myvec{1&\frac{1}{2}&\dots&\frac{1}{n}\\\frac{1}{2}&\frac{1}{3}&\dots&\frac{1}{n+1}\\\vdots&\vdots&\dots&\vdots\\\frac{1}{n}&\frac{1}{n+1}&\dots&\frac{1}{2n-1}}
+\end{align*}
+\section{\textbf{Solution}}
+\begin{comment}
+Let $\vec{H_n}$ be the $n$-th Hilbert matrix given by
+\begin{align}
+\vec{H_n} &= \left[\frac1{i+j-1}\right]_{i,j}\\
+\intertext{Then $\vec{H_{n+1}}$ is given by,}
+\vec{H_{n+1}} &= \myvec{\vec{H_n}&\vec{u}\\\vec{u^T}&\frac{1}{2n-1}}
+\end{align}
+\end{comment}
+Let $\vec{A_3}$ be $3 \times 3$ matrix i.e
+\begin{align}
+\vec{A_3} &= \myvec{1&\frac{1}{2}&\frac{1}{3}\\\frac{1}{2}&\frac{1}{3}&\frac{1}{4}\\\frac{1}{3}&\frac{1}{4}&\frac{1}{5}}
+\end{align}
+Now we find the inverse of the matrix $\vec{A_3}$ as follows,
+\begin{align}
+\myvec{1&\frac{1}{2}&\frac{1}{3}&1&0&0\\\frac{1}{2}&\frac{1}{3}&\frac{1}{4}&0&1&0\\\frac{1}{3}&\frac{1}{4}&\frac{1}{5}&0&0&1}\\
+\xleftrightarrow[R_3 = R_3 - \frac{1}{3}R_1]{R_2 = R_2 - \frac{1}{2}R_1}\myvec{1&\frac{1}{2}&\frac{1}{3}&1&0&0\\0&\frac{1}{12}&\frac{1}{12}&-\frac{1}{2}&1&0\\0&\frac{1}{12}&\frac{1}{45}&-\frac{1}{3}&0&1}\\
+\xleftrightarrow[]{R_3 = R_3 - R_2}\myvec{1&\frac{1}{2}&\frac{1}{3}&1&0&0\\0&\frac{1}{12}&\frac{1}{12}&-\frac{1}{2}&1&0\\0&0&\frac{1}{180}&\frac{1}{6}&-1&1}\\
+\xleftrightarrow[R_3 = 180R_3]{R_2 = 12R_2}\myvec{1&\frac{1}{2}&\frac{1}{3}&1&0&0\\0&1&1&-6&12&0\\0&0&1&30&-180&180}\\
+\xleftrightarrow[R_1=R_1-R_3]{R_2 = R_2 - R3}\myvec{1&\frac{1}{2}&0&-9&60&-60\\0&1&0&-36&192&-180\\0&0&1&30&-180&180}\\
+\xleftrightarrow{R_1 =R_1-\frac{1}{2}R_2}\myvec{1&0&0&9&-36&30\\0&1&0&-36&192&-180\\0&0&1&30&-180&180}
+\end{align}
+Hence we see that $\vec{A_3}$ is invertible and the inverse contains integer entries and $\vec{A_3^{-1}}$ is given by,
+\begin{align}
+\vec{A_3^{-1}} = \myvec{9&-36&30\\-36&192&-180\\30&-180&180}\label{A3inv}
+\end{align}
+Now, expressing $\vec{A_4}$ using $\vec{A_2}$ we get,
+\begin{align}
+\vec{A_4} &= \myvec{\vec{A_3}&\vec{u}\\\vec{u^T}&\vec{d}}\label{eqA4}
+\intertext{where,}
+\vec{u} &= \myvec{\frac{1}{4} \\ \frac{1}{5} \\ \frac{1}{6}} \\
+\vec{d} &= \myvec{\frac{1}{7}}
+\end{align}
+Now assuming $\vec{A_4}$ has an inverse, then from \eqref{eqA4}, the inverse of $\vec{A_4}$ can be written as follows,
+\begin{align}
+\vec{A_4^{-1}} &= \myvec{\vec{A_3^{-1}}+\vec{A_3^{-1}}\vec{u}\vec{X^{-1}}\vec{u^T}\vec{A_3^{-1}} & -\vec{A_3^{-1}\vec{u}\vec{X^{-1}}}\\-\vec{X^{-1}}\vec{u^T}\vec{A_3^{-1}} & \vec{X^{-1}}}\label{eqblockinv}
+\intertext{where,}
+\vec{X} &= \vec{d-\vec{u^T}\vec{A_3^{-1}}\vec{u}}\label{eqX}
+\end{align}
+Now, the assumption of $\vec{A_4}$ being invertible will hold if and only if $\vec{A_3}$ is invertible, which has been proved in \eqref{A3inv} and $\vec{X}$ from \eqref{eqX} is invertible. We now prove that $\vec{X}$ is invertible as follows,
+\begin{align}
+\vec{X} &= \myvec{\frac{1}{7}}-\myvec{\frac{1}{4}&\frac{1}{5}&\frac{1}{6}}\myvec{9&-36&30\\-36&192&-180\\30&-180&180}\myvec{\frac{1}{4} \\ \frac{1}{5} \\ \frac{1}{6}}\\
+\implies\vec{X} &= \myvec{\frac{1}{2800}}
+\intertext{Hence, $\vec{X}$ is a square invertible matrix as it has linearly independent columns, hence $\vec{X^{-1}}$ is given by,}
+\vec{X^{-1}} &= \myvec{2800}
+\end{align}
+Hence, $\vec{A_4}$ is invertible. Now putting the values of $\vec{A_3^{-1}}$, $\vec{X^{-1}}$ and $\vec{u}$ we get,
+\begin{align}
+\vec{A_3^{-1}}+\vec{A_3^{-1}}\vec{u}\vec{X^{-1}}\vec{u^T}\vec{A_3^{-1}} &= \myvec{16&-120&240\\-120&1200&-2700\\240&-2700&6480}\label{A1}\\
+-\vec{A_3^{-1}\vec{u}\vec{X^{-1}}} &= \myvec{-140\\1680\\-4200}\label{A2}\\
+-\vec{X^{-1}}\vec{u^T}\vec{A_3^{-1}} &= \myvec{-140&1680&-4200}\label{A3}\\
+\vec{X^{-1}} &= \myvec{2800}\label{A4}
+\end{align}
+Putting values from \eqref{A1}, \eqref{A2}, \eqref{A3} and \eqref{A4} into \eqref{eqblockinv} we get,
+\begin{align}
+\vec{A_4^{-1}} &= \myvec{16&-120&240&-140\\-120&1200&-2700&1680\\240&-2700&6480&-4200\\-140&1680&-4200&2800}\label{A4invfin}
+\end{align}
+Hence, from \eqref{A4invfin} we prove that, $\vec{A_4}$ is invertible and has integer entries. Hence by induction we conclude that as $\vec{A_{n-1}}$ will always have inverse with integer entries hence, $\vec{A_n}$ will also have inverse with integer entries for all integer $n$.\\
+Hence Proved.
+\end{document}
