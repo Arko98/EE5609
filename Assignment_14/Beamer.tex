@@ -225,7 +225,7 @@ Now, expressing $\vec{A_4}$ using $\vec{A_3}$ we get,
 \vec{u} &= \myvec{\frac{1}{4} \\ \frac{1}{5} \\ \frac{1}{6}} \\
 \vec{d} &= \myvec{\frac{1}{7}}
 \end{align}
-Now assuming $\vec{A_4}$ has an inverse, then from \eqref{eqA4}, the inverse of $\vec{A_4}$ can be written as follows,
+Now assuming $\vec{A_4}$ has an inverse, then from \eqref{eqA4}, the inverse of $\vec{A_4}$ can be written using block matrix inversion as follows,
 \begin{align}
 \vec{A_4^{-1}} &= \myvec{\vec{A_3^{-1}}+\vec{A_3^{-1}}\vec{u}\vec{X^{-1}}\vec{u^T}\vec{A_3^{-1}} & -\vec{A_3^{-1}\vec{u}\vec{X^{-1}}}\\-\vec{X^{-1}}\vec{u^T}\vec{A_3^{-1}} & \vec{X^{-1}}}\label{eqblockinv}
 \intertext{where,}
