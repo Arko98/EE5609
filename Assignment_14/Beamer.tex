@@ -249,6 +249,23 @@ Putting values from \eqref{A1}, \eqref{A2}, \eqref{A3} and \eqref{A4} into \eqre
 \begin{align}
 \vec{A_4^{-1}} &= \myvec{16&-120&240&-140\\-120&1200&-2700&1680\\240&-2700&6480&-4200\\-140&1680&-4200&2800}\label{A4invfin}
 \end{align}
-Hence, from \eqref{A4invfin} we prove that, $\vec{A_4}$ is invertible and has integer entries. Hence by induction we conclude that as $\vec{A_{n-1}}$ will always have inverse with integer entries hence, $\vec{A_n}$ will also have inverse with integer entries for all integer $n$.\\
-Hence Proved.
+Hence, from \eqref{A4invfin} we prove that, $\vec{A_4}$ is invertible and has integer entries.\\ 
+Let $\vec{A_{n-1}}$ be invertible with integer entries. Then we can represent $\vec{A_{n}}$ as follows,
+\begin{align}
+\vec{A_{n}} &= \myvec{\vec{A_{n-1}}&\vec{u}\\\vec{u^T}&\vec{d}}\label{eqAn}
+\intertext{where,}
+\vec{u} &=  \myvec{\frac{1}{4} \\ \frac{1}{5} \\ \vdots \\ \frac{1}{2n-2}} \\
+\vec{d} &= \myvec{\frac{1}{2n-1}}
+\end{align}
+Now assuming $\vec{A_{n}}$ has an inverse, then from \eqref{eqAn}, the inverse of $\vec{A_n}$ can be written using block matrix inversion as follows,
+\begin{align}
+\vec{{A_n}^{-1}} &= \myvec{\vec{A_{n-1}^{-1}}+\vec{A_{n-1}^{-1}}\vec{u}\vec{X^{-1}}\vec{u^T}\vec{A_{n-1}^{-1}} & -\vec{A_{n-1}^{-1}\vec{u}\vec{X^{-1}}}\\-\vec{X^{-1}}\vec{u^T}\vec{A_{n-1}^{-1}} & \vec{X^{-1}}}\label{eqblockinv1}
+\intertext{where,}
+\vec{X} &= \vec{d-\vec{u^T}\vec{A_{n-1}^{-1}}\vec{u}}\label{eqX1}
+\end{align}
+Now, the assumption of $\vec{A_n}$ being invertible will hold if and only if $\vec{A_{n-1}}$ is invertible, which has been assumed and $\vec{X}$ from \eqref{eqX1} is invertible. We now prove that $\vec{X}$ is invertible as follows,
+\begin{align}
+\vec{X} &= \myvec{\frac{1}{2n-1}}-\myvec{\frac{1}{4}&\frac{1}{5}&\dots&\frac{1}{2n-2}}\vec{A_{n-1}^{-1}}\myvec{\frac{1}{4}\\\frac{1}{5}\\\dots\\\frac{1}{2n-2}} \label{eqX2}
+\end{align}
+In equation \eqref{eqX2} $\vec{u}$ contains no negative or zero entries, again $\vec{A_{n-1}^{-1}}$ has non zero integer entries, hence $\vec{u^T}\vec{A_{n-1}^{-1}}\vec{u}$ is a non zero matrix with size $1 \times 1$. Moreover $\vec{d}$ is not equal to $\vec{u^T}\vec{A_{n-1}^{-1}}\vec{u}$ hence in \eqref{eqX2} $\vec{X}$ is non-zero matrix and hence it has an inverse. Hence $\vec{A_n}$ is invertible, proved.
 \end{document}
