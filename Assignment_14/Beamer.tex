@@ -235,7 +235,7 @@ Now, the assumption of $\vec{A_4}$ being invertible will hold if and only if $\v
 \begin{align}
 \vec{X} &= \myvec{\frac{1}{7}}-\myvec{\frac{1}{4}&\frac{1}{5}&\frac{1}{6}}\myvec{9&-36&30\\-36&192&-180\\30&-180&180}\myvec{\frac{1}{4} \\ \frac{1}{5} \\ \frac{1}{6}}\\
 \implies\vec{X} &= \myvec{\frac{1}{2800}}
-\intertext{Hence, $\vec{X}$ is a square invertible matrix as it has linearly independent columns, hence $\vec{X^{-1}}$ is given by,}
+\intertext{Hence, $\vec{X}$ is a scalar, hence $\vec{X^{-1}}$ exists and is given by,}
 \vec{X^{-1}} &= \myvec{2800}
 \end{align}
 Hence, $\vec{A_4}$ is invertible. Now putting the values of $\vec{A_3^{-1}}$, $\vec{X^{-1}}$ and $\vec{u}$ we get,
@@ -267,5 +267,5 @@ Now, the assumption of $\vec{A_n}$ being invertible will hold if and only if $\v
 \begin{align}
 \vec{X} &= \myvec{\frac{1}{2n-1}}-\myvec{\frac{1}{4}&\frac{1}{5}&\dots&\frac{1}{2n-2}}\vec{A_{n-1}^{-1}}\myvec{\frac{1}{4}\\\frac{1}{5}\\\dots\\\frac{1}{2n-2}} \label{eqX2}
 \end{align}
-In equation \eqref{eqX2} $\vec{u}$ contains no negative or zero entries, again $\vec{A_{n-1}^{-1}}$ has non zero integer entries, hence $\vec{u^T}\vec{A_{n-1}^{-1}}\vec{u}$ is a non zero matrix with size $1 \times 1$. Moreover $\vec{d}$ is not equal to $\vec{u^T}\vec{A_{n-1}^{-1}}\vec{u}$ hence in \eqref{eqX2} $\vec{X}$ is non-zero matrix and hence it has an inverse. Hence $\vec{A_n}$ is invertible, proved.
+In equation \eqref{eqX2} $\vec{u}$ contains no negative or zero entries, again $\vec{A_{n-1}^{-1}}$ has non zero integer entries, hence $\vec{u^T}\vec{A_{n-1}^{-1}}\vec{u}$ is a non zero matrix with size $1 \times 1$. Moreover $\vec{d}$ is not equal to $\vec{u^T}\vec{A_{n-1}^{-1}}\vec{u}$ hence in \eqref{eqX2} $\vec{X}$ is non-zero sclar and invertible and hence it has an inverse. Hence $\vec{A_n}$ is invertible, proved.
 \end{document}
