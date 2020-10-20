@@ -261,7 +261,7 @@ Now assuming $\vec{A_{n}}$ has an inverse, then from \eqref{eqAn}, the inverse o
 \begin{align}
 \vec{{A_n}^{-1}} &= \myvec{\vec{A_{n-1}^{-1}}+\vec{A_{n-1}^{-1}}\vec{u}x^{-1}\vec{u^T}\vec{A_{n-1}^{-1}} & -\vec{A_{n-1}^{-1}}\vec{u}x^{-1}\\-x^{-1}\vec{u^T}\vec{A_{n-1}^{-1}} & x^{-1}}\label{eqblockinv1}
 \intertext{where,}
-x &= \vec{d-\vec{u^T}\vec{A_{n-1}^{-1}}\vec{u}}\label{eqX1}
+x &= d-\vec{u^T}\vec{A_{n-1}^{-1}}\vec{u}\label{eqX1}
 \end{align}
 Now, the assumption of $\vec{A_n}$ being invertible will hold if and only if $\vec{A_{n-1}}$ is invertible, which has been assumed and $x$ from \eqref{eqX1} is invertible or $x$ is a nonzero scalar. We now prove that $x$ is invertible as follows,
 \begin{align}
