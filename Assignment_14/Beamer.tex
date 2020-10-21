@@ -259,7 +259,8 @@ d &= \frac{1}{2n-1}
 \end{align}
 Now assuming $\vec{A_{n}}$ has an inverse, then from \eqref{eqAn}, the inverse of $\vec{A_n}$ can be written using block matrix inversion as follows,
 \begin{align}
-\vec{{A_n}^{-1}} &= \myvec{\vec{A_{n-1}^{-1}}+\vec{A_{n-1}^{-1}}\vec{u}x^{-1}\vec{u^T}\vec{A_{n-1}^{-1}} & -\vec{A_{n-1}^{-1}}\vec{u}x^{-1}\\-x^{-1}\vec{u^T}\vec{A_{n-1}^{-1}} & x^{-1}}\label{eqblockinv1}
+\vec{{A_n}^{-1}} &= \myvec{\vec{A_{n-1}^{-1}}+\vec{A_{n-1}^{-1}}\vec{u}x^{-1}\vec{u^T}\vec{A_{n-1}^{-1}} & -\vec{A_{n-1}^{-1}}\vec{u}x^{-1}\\-x^{-1}\vec{u^T}\vec{A_{n-1}^{-1}} & x^{-1}}\\
+&= x^{-1}\myvec{x\vec{A_{n-1}^{-1}}+\vec{A_{n-1}^{-1}}{-1}\vec{u^T}\vec{A_{n-1}^{-1}} & -\vec{A_{n-1}^{-1}}\vec{u}\\\vec{u^T}\vec{A_{n-1}^{-1}} &1}\label{eqblockinv1}
 \intertext{where,}
 x &= d-\vec{u^T}\vec{A_{n-1}^{-1}}\vec{u}\label{eqX1}
 \end{align}
