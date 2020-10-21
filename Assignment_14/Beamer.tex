@@ -227,23 +227,23 @@ d &= \frac{1}{7}
 \end{align}
 Now assuming $\vec{A_4}$ has an inverse, then from \eqref{eqA4}, the inverse of $\vec{A_4}$ can be written using block matrix inversion as follows,
 \begin{align}
-\vec{A_4^{-1}} &= \myvec{\vec{A_3^{-1}}+\vec{A_3^{-1}}\vec{u}x^{-1}\vec{u^T}\vec{A_3^{-1}} & -\vec{A_3^{-1}}\vec{u}x^{-1}\\-x^{-1}\vec{u^T}\vec{A_3^{-1}} & x^{-1}}\label{eqblockinv}
+\vec{A_4^{-1}} &= \myvec{\vec{A_3^{-1}}+\vec{A_3^{-1}}\vec{u}x_4^{-1}\vec{u^T}\vec{A_3^{-1}} & -\vec{A_3^{-1}}\vec{u}x_4^{-1}\\-x^{-1}\vec{u^T}\vec{A_3^{-1}} & x_4^{-1}}\label{eqblockinv}
 \intertext{where,}
-x &= d-{\vec{u^T}\vec{A_3^{-1}}\vec{u}}\label{eqX}
+x_4 &= d-{\vec{u^T}\vec{A_3^{-1}}\vec{u}}\label{eqX}
 \end{align}
-Now, the assumption of $\vec{A_4}$ being invertible will hold if and only if $\vec{A_3}$ is invertible, which has been proved in \eqref{A3inv} and $x$ from \eqref{eqX} is invertible or $x$ is a nonzero scalar. We now prove that $x$ is invertible as follows,
+Now, the assumption of $\vec{A_4}$ being invertible will hold if and only if $\vec{A_3}$ is invertible, which has been proved in \eqref{A3inv} and $x_4$ from \eqref{eqX} is invertible or $x_4$ is a nonzero scalar. We now prove that $x_4$ is invertible as follows,
 \begin{align}
-x &= \frac{1}{7}-\myvec{\frac{1}{4}&\frac{1}{5}&\frac{1}{6}}\myvec{9&-36&30\\-36&192&-180\\30&-180&180}\myvec{\frac{1}{4} \\ \frac{1}{5} \\ \frac{1}{6}}\\
-\implies x &= \frac{1}{2800}
-\intertext{Hence, $x$ is a scalar, hence $x^{-1}$ exists and is given by,}
-x^{-1} &= 2800
+x_4 &= \frac{1}{7}-\myvec{\frac{1}{4}&\frac{1}{5}&\frac{1}{6}}\myvec{9&-36&30\\-36&192&-180\\30&-180&180}\myvec{\frac{1}{4} \\ \frac{1}{5} \\ \frac{1}{6}}\\
+\implies x_4 &= \frac{1}{2800}
+\intertext{Hence, $x_4$ is a scalar, hence $x_4^{-1}$ exists and is given by,}
+x_4^{-1} &= 2800
 \end{align}
-Hence, $\vec{A_4}$ is invertible. Now putting the values of $\vec{A_3^{-1}}$, $x^{-1}$ and $\vec{u}$ we get,
+Hence, $\vec{A_4}$ is invertible. Now putting the values of $\vec{A_3^{-1}}$, $x_4^{-1}$ and $\vec{u}$ we get,
 \begin{align}
-\vec{A_3^{-1}}+\vec{A_3^{-1}}\vec{u}x^{-1}\vec{u^T}\vec{A_3^{-1}} &= \myvec{16&-120&240\\-120&1200&-2700\\240&-2700&6480}\label{A1}\\
--\vec{A_3^{-1}}\vec{u}x^{-1} &= \myvec{-140\\1680\\-4200}\label{A2}\\
-x^{-1}\vec{u^T}\vec{A_3^{-1}} &= \myvec{-140&1680&-4200}\label{A3}\\
-x^{-1} &= 2800\label{A4}
+\vec{A_3^{-1}}+\vec{A_3^{-1}}\vec{u}x_4^{-1}\vec{u^T}\vec{A_3^{-1}} &= \myvec{16&-120&240\\-120&1200&-2700\\240&-2700&6480}\label{A1}\\
+-\vec{A_3^{-1}}\vec{u}x_4^{-1} &= \myvec{-140\\1680\\-4200}\label{A2}\\
+x_4^{-1}\vec{u^T}\vec{A_3^{-1}} &= \myvec{-140&1680&-4200}\label{A3}\\
+x_4^{-1} &= 2800\label{A4}
 \end{align}
 Putting values from \eqref{A1}, \eqref{A2}, \eqref{A3} and \eqref{A4} into \eqref{eqblockinv} we get,
 \begin{align}
@@ -259,14 +259,14 @@ d &= \frac{1}{2n-1}
 \end{align}
 Now assuming $\vec{A_{n}}$ has an inverse, then from \eqref{eqAn}, the inverse of $\vec{A_n}$ can be written using block matrix inversion as follows,
 \begin{align}
-\vec{{A_n}^{-1}} &= \myvec{\vec{A_{n-1}^{-1}}+\vec{A_{n-1}^{-1}}\vec{u}x^{-1}\vec{u^T}\vec{A_{n-1}^{-1}} & -\vec{A_{n-1}^{-1}}\vec{u}x^{-1}\\-x^{-1}\vec{u^T}\vec{A_{n-1}^{-1}} & x^{-1}}\\
-&= x^{-1}\myvec{x\vec{A_{n-1}^{-1}}+\vec{A_{n-1}^{-1}}{-1}\vec{u^T}\vec{A_{n-1}^{-1}} & -\vec{A_{n-1}^{-1}}\vec{u}\\-\vec{u^T}\vec{A_{n-1}^{-1}} &1}\label{eqblockinv1}
+\vec{{A_n}^{-1}} &= \myvec{\vec{A_{n-1}^{-1}}+\vec{A_{n-1}^{-1}}\vec{u}x_n^{-1}\vec{u^T}\vec{A_{n-1}^{-1}} & -\vec{A_{n-1}^{-1}}\vec{u}x_n^{-1}\\-x_n^{-1}\vec{u^T}\vec{A_{n-1}^{-1}} & x_n^{-1}}\\
+&= x_n^{-1}\myvec{x_n\vec{A_{n-1}^{-1}}+\vec{A_{n-1}^{-1}}{-1}\vec{u^T}\vec{A_{n-1}^{-1}} & -\vec{A_{n-1}^{-1}}\vec{u}\\-\vec{u^T}\vec{A_{n-1}^{-1}} &1}\label{eqblockinv1}
 \intertext{where,}
-x &= d-\vec{u^T}\vec{A_{n-1}^{-1}}\vec{u}\label{eqX1}
+x_n &= d-\vec{u^T}\vec{A_{n-1}^{-1}}\vec{u}\label{eqX1}
 \end{align}
-Now, the assumption of $\vec{A_n}$ being invertible will hold if and only if $\vec{A_{n-1}}$ is invertible, which has been assumed and $x$ from \eqref{eqX1} is invertible or $x$ is a nonzero scalar. We now prove that $x$ is invertible as follows,
+Now, the assumption of $\vec{A_n}$ being invertible will hold if and only if $\vec{A_{n-1}}$ is invertible, which has been assumed and $x$ from \eqref{eqX1} is invertible or $x_n$ is a nonzero scalar. We now prove that $x_n$ is invertible as follows,
 \begin{align}
-x &= \frac{1}{2n-1}-\myvec{\frac{1}{4}&\frac{1}{5}&\dots&\frac{1}{2n-2}}\vec{A_{n-1}^{-1}}\myvec{\frac{1}{4}\\\frac{1}{5}\\\dots\\\frac{1}{2n-2}} \label{eqX2}
+x_n &= \frac{1}{2n-1}-\myvec{\frac{1}{4}&\frac{1}{5}&\dots&\frac{1}{2n-2}}\vec{A_{n-1}^{-1}}\myvec{\frac{1}{4}\\\frac{1}{5}\\\dots\\\frac{1}{2n-2}} \label{eqX2}
 \end{align}
 In equation \eqref{eqX2} $\vec{u}$ contains no negative or zero entries, again $\vec{A_{n-1}^{-1}}$ has non zero integer entries, hence $\vec{u^T}\vec{A_{n-1}^{-1}}\vec{u}$ is a non zero scalar. Moreover $d$ is not equal to $\vec{u^T}\vec{A_{n-1}^{-1}}\vec{u}$ hence in \eqref{eqX2} $x$ is non-zero scalar and invertible and hence it has an inverse. Hence $\vec{A_n}$ is invertible, proved.
 \end{document}
