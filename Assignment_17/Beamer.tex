@@ -196,6 +196,9 @@ TU &= I \quad{\text{is a function}}\\
 \intertext{Such that $T(V) = V$. Defining $TU &:\mathbb{V}\xrightarrow{}\mathbb{V}$ to be a linear operator, we have}
 T[U(V_i)] &= V_i \qquad{\text{[$V_i \in \mathbb{V}$]}}
 \end{align}
+
+
+\begin{comment}
 Let $\vec{V_1},\vec{V_2} \in \mathbb{V}$ then,
 \begin{align}
 \intertext{If $\vec{V_1} \ne \vec{V_2}$ then, $T[U(\vec{V_1})] \ne T[U(\vec{V_2})]$. Hence,}
@@ -205,7 +208,26 @@ T \quad{\text{must be onto function}}\label{onto}
 \intertext{From \eqref{oneone} and \eqref{onto} we get,}
 T \quad{\text{is invertible function}}\label{inv}
 \end{align}
-From \eqref{inv} we know,
+\end{comment}
+Now we show in the below Table that $T$ is one-one and onto as follows,\\
+\setcounter{table}{0} \renewcommand{\thetable}{\arabic{table}}
+\begin{table}[h!]
+\centering\renewcommand\cellalign{lc}
+\makegapedcells
+\begin{tabular}{|c|c|} \hline
+\textbf{Proof} & \textbf{Conclusion}  \\ \hline
+\makecell{Let $\vec{V_1},\vec{V_2} \in \mathbb{V}$ then, &
+         \\If $\vec{V_1} \ne \vec{V_2}$ then, & $T$ is one-one function
+         \\$T[U(\vec{V_1})] \ne T[U(\vec{V_2})]$} &  \\ \hline
+\makecell{$T$ is linear operator on & 
+          \\finite dimensional & $T$ is onto function 
+          \\ vector space} & \\\hline
+\end{tabular}
+\caption{Proof of Invertibility of transformation}
+\label{tab:invert}
+\end{table}\\
+\\Hence we get from Table \ref{tab:invert} that, $T$ is invertible.
+Hence we get the following,
 \begin{align}
 TT^{-1} &= I\\
 \intertext{Where $T^{-1}$ is an inverse function of linear operator $T$. Hence,}
@@ -214,7 +236,7 @@ TT^{-1} &= I = TU\\
 \implies T^{-1}(I) &= IU\\
 \implies T^{-1} &= U\label{proof}
 \end{align}
-Hence from \eqref{inv} and \eqref{proof} it is proven that $T$ is invertible and $T^{-1} = U$
+Hence from \eqref{proof} it is proven that $T$ is invertible and $T^{-1} = U$
 \subsection{Example}
 Let $D$ be the differential operator $D:\mathbb{V} \xrightarrow{} \mathbb{V}$ where $\mathbb{V}$ is a space of polynomial functions in one variable over $\mathbb{R}$. Hence,
 \begin{align}
