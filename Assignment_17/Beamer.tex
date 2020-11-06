@@ -238,36 +238,44 @@ TT^{-1} &= I = TU\\
 \end{align}
 Hence from \eqref{proof} it is proven that $T$ is invertible and $T^{-1} = U$
 \subsection{Example}
-Let $D$ be the differential operator $D:\mathbb{V} \xrightarrow{} \mathbb{V}$ where $\mathbb{V}$ is a space of polynomial functions in one variable over $\mathbb{R}$. Hence,
+Let $D$ be the differential operator $D:\mathbb{V} \xrightarrow{} \mathbb{V}$ where $\mathbb{V}$ is a space of polynomial functions in one variable $x$ over $\mathbb{R}$. We first prove that the vector space $\mathbb{V}$ is infinite dimensional.\\
+Suppose to the contrary that $\mathbb{V}$ is finite dimensional vector space and is given by the span of $k$ polynomials in $\mathbb{V}$ which are, $p_1,p_2,\dots,p_k$ where $m$ denote the maximum of the degrees of these $k$ polynomials. Hence, $x^{m+1}$ is a vector in $\mathbb{V}$ but it cannot be written as a linear combination of $p_1,p_2,\dots,p_k$ because taking linear combinations of polynomials of degree at most $m$ cannot give polynomials of degree higher than $m$. Hence, $x^{m+1}$ is not in the span of ${p_1,p_2,\dots,p_k}$. Hence, $\mathbb{V}$ is infinite dimensional vector space.\\
 \begin{align}
-D(c_0+c_1x+\dots+c_nx^n) &= c_1+c^{\prime}_2x+\dots+c^{\prime}_nx^{n-1}
+D(c_0+c_1x+\dots+c_nx^n) &= c_1+c^{\prime}_2x+\dots+c^{\prime}_nx^{n-1}\label{See}
+\end{align}
+From \eqref{See}, the operator $D$ is a linear operator from the vector space $V$. It is not a one-one operator. We give argument supporting the statement as follows. Let, two different elements from the vector space $\mathbb{V}$ be $(c_1+x^m)$ and $(c_2+x^m)$. Now,
+\begin{align}
+D(c_1+x^m) &= mx^{m-1}\label{a1}\\
+D(c_2+x^m) &= mx^{m-1}\label{a2}\\
+\intertext{From \eqref{a1} and \eqref{a2} we see that even though $(c_1+x^m) \ne (c_2+x^m)$, we have}
+D(c_1+x^m) &= D(c_2+x^m)
 \end{align}
 And, $U:\mathbb{V} \xrightarrow{} \mathbb{V}$ is another linear operator such that,
 \begin{align}
 U(c_0+c_1x+\dots+c_nx^n) &= c_0x+c_1\frac{x^2}{2}+\dots+c_n\frac{x^{n+1}}{n+1}
 \end{align}
-Then $UD:\mathbb{V} \xrightarrow{} \mathbb{V}$ is a linear operator such that,
-\begin{align}
-&UD(c_0+c_1x+\dots+c_nx^n) \\
-&= U[D(c_0x+c_1\frac{x^2}{2}+\dots+c_n\frac{x^{n+1}}{n+1})]\\
-&= U[c_1+c^{\prime}_2x+\dots+c^{\prime}_nx^{n-1}]\\
-&= c_1x+c_2\frac{x^2}{2}+\dots+c_n\frac{x^{n}}{n}\label{eq1}\
-\end{align}
-Hence, from \eqref{eq1},
-\begin{align}
-UD \ne I\label{show1}
-\end{align}
-Again, $DU:\mathbb{V} \xrightarrow{} \mathbb{V}$ is a linear operator such that,
+Now, $DU:\mathbb{V} \xrightarrow{} \mathbb{V}$ is a linear operator such that,
 \begin{align}
 &DU(c_0+c_1x+\dots+c_nx^n) \\
 &= D[U(c_0x+c_1\frac{x^2}{2}+\dots+c_n\frac{x^{n+1}}{n+1})]\\
 &= D[c_0x+c_1\frac{x^2}{2}+\dots+c_n\frac{x^{n+1}}{n+1}]\\
 &= c_0+c_1\frac{2x}{2}+\dots+c_n\frac{(n+1)x^{n}}{n+1}\\
-&= c_0+c_1x+\dots+c_nx^n\label{eq2}
+&= c_0+c_1x+\dots+c_nx^n\label{eq1}
+\end{align}
+Hence, from \eqref{eq1},
+\begin{align}
+DU = I\label{show1}
+\end{align}
+Again $UD:\mathbb{V} \xrightarrow{} \mathbb{V}$ is a linear operator such that,
+\begin{align}
+&UD(c_0+c_1x+\dots+c_nx^n) \\
+&= U[D(c_0x+c_1\frac{x^2}{2}+\dots+c_n\frac{x^{n+1}}{n+1})]\\
+&= U[c_1+c^{\prime}_2x+\dots+c^{\prime}_nx^{n-1}]\\
+&= c_1x+c_2\frac{x^2}{2}+\dots+c_n\frac{x^{n}}{n}\label{eq2}\
 \end{align}
 Hence, from \eqref{eq2},
 \begin{align}
-DU = I\label{show2}
+UD \ne I\label{show2}
 \end{align}
 Hence, from \eqref{show1} and \eqref{show2}, $D$ is not invertible.
 \end{document}
