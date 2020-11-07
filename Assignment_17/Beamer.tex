@@ -190,25 +190,16 @@ Let $T$ be a linear operator on the finite-dimensional space $\mathbb{V}$. Suppo
 Let $T:\mathbb{V} \xrightarrow{} \mathbb{V}$ be a linear operator, where $\mathbb{V}$ is a finite dimensional vectors space and $U:\mathbb{V} \xrightarrow{} \mathbb{V}$ is also a linear operator such that,
 \begin{align}
 TU &= I
-\intertext{Where, $I$ is an identity transformation. Now we know that linear transformations are functions. Hence,}
-TU &= I \quad{\text{is a function}}\\
-\implies I &:\mathbb{V}\xrightarrow{}\mathbb{V}\\
-\intertext{Such that $T(V) = V$. Defining $TU &:\mathbb{V}\xrightarrow{}\mathbb{V}$ to be a linear operator, we have}
+\end{align}
+Where, $I$ is an identity transformation. Now we know that linear transformations are functions. Hence,
+\begin{align}
+&TU = I \quad{\text{is a function}}\\
+\implies& I :\mathbb{V}\xrightarrow{}\mathbb{V}
+\end{align}
+Such that $T(V) = V$. Defining $TU &:\mathbb{V}\xrightarrow{}\mathbb{V}$ to be a linear operator, we have,
+\begin{align}
 T[U(V_i)] &= V_i \qquad{\text{[$V_i \in \mathbb{V}$]}}
 \end{align}
-
-
-\begin{comment}
-Let $\vec{V_1},\vec{V_2} \in \mathbb{V}$ then,
-\begin{align}
-\intertext{If $\vec{V_1} \ne \vec{V_2}$ then, $T[U(\vec{V_1})] \ne T[U(\vec{V_2})]$. Hence,}
-T \quad{\text{must be one-one function}}\label{oneone}
-\intertext{Again, $T$ is linear operator on finite dimensional vector space. Hence,}
-T \quad{\text{must be onto function}}\label{onto}
-\intertext{From \eqref{oneone} and \eqref{onto} we get,}
-T \quad{\text{is invertible function}}\label{inv}
-\end{align}
-\end{comment}
 Now we show in the below Table that $T$ is one-one and onto as follows,\\
 \setcounter{table}{0} \renewcommand{\thetable}{\arabic{table}}
 \begin{table}[h!]
@@ -229,8 +220,10 @@ Now we show in the below Table that $T$ is one-one and onto as follows,\\
 \\Hence we get from Table \ref{tab:invert} that, $T$ is invertible.
 Hence we get the following,
 \begin{align}
-TT^{-1} &= I\\
-\intertext{Where $T^{-1}$ is an inverse function of linear operator $T$. Hence,}
+TT^{-1} &= I
+\end{align}
+Where $T^{-1}$ is an inverse function of linear operator $T$. Hence,
+\begin{align}
 TT^{-1} &= I = TU\\
 \implies T^{-1}(TT^{-1}) &= T^{-1}(TU)\\
 \implies T^{-1}(I) &= IU\\
@@ -249,21 +242,26 @@ span(\mathbb{V}) &= \{p_1,p_2,\dots,p_k\}\label{basis}
 \end{align}
 Also let $m$ be the maximum of the degree of these $k$ polynomials in \eqref{basis}. Now let an element of the vector space $\mathbb{V}$ be,
 \begin{align}
-cx^{m+1} &\in \mathbb{V}\\
-\intertext{As maximum degree of the basis of $\mathbb{V}$ is $m$ hence $cx^{m+1}$ cannot be represented by any linear combination of the basis of $\mathbb{V}$. If $\mathbb{F}$ is field corresponding to $\mathbb{V}$ then we have,}
+cx^{m+1} &\in \mathbb{V}
+\end{align}
+As maximum degree of the basis of $\mathbb{V}$ is $m$ hence $cx^{m+1}$ cannot be represented by any linear combination of the basis of $\mathbb{V}$. If $\mathbb{F}$ is field corresponding to $\mathbb{V}$ then we have,
+\begin{align}
 cx^{m+1} &\ne \sum_{i=1}^{k}\alpha_ip_i \quad{\text{[$\alpha_i \in \mathbb{F}$ $\forall i$]}}
 \end{align}
 Hence, $cx^{m+1}$ is not in the span of ${p_1,p_2,\dots,p_k}$. Hence, $\mathbb{V}$ is infinite dimensional vector space.\\
 Next we prove that $D$ is not one-one operator. Let, two different elements from the vector space $\mathbb{V}$ be as follows,
 \begin{align}
 c_1+x^m &\in \mathbb{V}\\
-c_2+x^m &\in \mathbb{V}\\
-\intertext{From definition \eqref{See} of operator $D$ we have,}
+c_2+x^m &\in \mathbb{V}
+\end{align}
+From definition \eqref{See} of operator $D$ we have,
+\begin{align}
 D(c_1+x^m) &= mx^{m-1}\label{a1}\\
-D(c_2+x^m) &= mx^{m-1}\label{a2}\\
-\intertext{From \eqref{a1} and \eqref{a2},}
+D(c_2+x^m) &= mx^{m-1}\label{a2}
+\end{align}
+From \eqref{a1} and \eqref{a2},
+\begin{align}
 c_1+x^m &\ne c_2+x^m\\
-\intertext{But}
 D(c_1+x^m) &= D(c_2+x^m)\label{Not_Oneone}
 \end{align}
 Hence from \eqref{Not_Oneone} we see that $D$ is not One-One operator.\\
