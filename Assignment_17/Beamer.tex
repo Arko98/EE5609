@@ -238,18 +238,35 @@ TT^{-1} &= I = TU\\
 \end{align}
 Hence from \eqref{proof} it is proven that $T$ is invertible and $T^{-1} = U$
 \subsection{Example}
-Let $D$ be the differential operator $D:\mathbb{V} \xrightarrow{} \mathbb{V}$ where $\mathbb{V}$ is a space of polynomial functions in one variable $x$ over $\mathbb{R}$. We first prove that the vector space $\mathbb{V}$ is infinite dimensional.\\
-Suppose to the contrary that $\mathbb{V}$ is finite dimensional vector space and is given by the span of $k$ polynomials in $\mathbb{V}$ which are, $p_1,p_2,\dots,p_k$ where $m$ denote the maximum of the degrees of these $k$ polynomials. Hence, $x^{m+1}$ is a vector in $\mathbb{V}$ but it cannot be written as a linear combination of $p_1,p_2,\dots,p_k$ because taking linear combinations of polynomials of degree at most $m$ cannot give polynomials of degree higher than $m$. Hence, $x^{m+1}$ is not in the span of ${p_1,p_2,\dots,p_k}$. Hence, $\mathbb{V}$ is infinite dimensional vector space.\\
+Let $D$ be the differential operator $D:\mathbb{V} \xrightarrow{} \mathbb{V}$ where $\mathbb{V}$ is a space of polynomial functions in one variable $x$ over $\mathbb{R}$ as follows,
 \begin{align}
 D(c_0+c_1x+\dots+c_nx^n) &= c_1+c^{\prime}_2x+\dots+c^{\prime}_nx^{n-1}\label{See}
 \end{align}
-From \eqref{See}, the operator $D$ is a linear operator from the vector space $V$. It is not a one-one operator. We give argument supporting the statement as follows. Let, two different elements from the vector space $\mathbb{V}$ be $(c_1+x^m)$ and $(c_2+x^m)$. Now,
+We first prove that the vector space $\mathbb{V}$ is infinite dimensional.\\
+Suppose to the contrary that $\mathbb{V}$ is finite dimensional vector space and is given by the span of $k$ polynomials in $\mathbb{V}$ as follows,
 \begin{align}
+span(\mathbb{V}) &= \{p_1,p_2,\dots,p_k\}\label{basis}
+\end{align}
+Also let $m$ be the maximum of the degree of these $k$ polynomials in \eqref{basis}. Now let an element of the vector space $\mathbb{V}$ be,
+\begin{align}
+cx^{m+1} &\in \mathbb{V}\\
+\intertext{As maximum degree of the basis of $\mathbb{V}$ is $m$ hence $cx^{m+1}$ cannot be represented by any linear combination of the basis of $\mathbb{V}$. If $\mathbb{F}$ is field corresponding to $\mathbb{V}$ then we have,}
+cx^{m+1} &\ne \sum_{i=1}^{k}\alpha_ip_i \quad{\text{[$\alpha_i \in \mathbb{F}$ $\forall i$]}}
+\end{align}
+Hence, $cx^{m+1}$ is not in the span of ${p_1,p_2,\dots,p_k}$. Hence, $\mathbb{V}$ is infinite dimensional vector space.\\
+Next we prove that $D$ is not one-one operator. Let, two different elements from the vector space $\mathbb{V}$ be as follows,
+\begin{align}
+c_1+x^m &\in \mathbb{V}\\
+c_2+x^m &\in \mathbb{V}\\
+\intertext{From definition \eqref{See} of operator $D$ we have,}
 D(c_1+x^m) &= mx^{m-1}\label{a1}\\
 D(c_2+x^m) &= mx^{m-1}\label{a2}\\
-\intertext{From \eqref{a1} and \eqref{a2} we see that even though $(c_1+x^m) \ne (c_2+x^m)$, we have}
-D(c_1+x^m) &= D(c_2+x^m)
+\intertext{From \eqref{a1} and \eqref{a2},}
+c_1+x^m &\ne c_2+x^m\\
+\intertext{But}
+D(c_1+x^m) &= D(c_2+x^m)\label{Not_Oneone}
 \end{align}
+Hence from \eqref{Not_Oneone} we see that $D$ is not One-One operator.\\
 And, $U:\mathbb{V} \xrightarrow{} \mathbb{V}$ is another linear operator such that,
 \begin{align}
 U(c_0+c_1x+\dots+c_nx^n) &= c_0x+c_1\frac{x^2}{2}+\dots+c_n\frac{x^{n+1}}{n+1}
