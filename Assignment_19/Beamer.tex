@@ -1,0 +1,256 @@
+\documentclass[journal,12pt,twocolumn]{IEEEtran}
+%
+\usepackage{setspace}
+\usepackage{gensymb}
+\usepackage{siunitx}
+\usepackage{tkz-euclide} 
+\usepackage{textcomp}
+\usepackage{standalone}
+\usetikzlibrary{calc}
+
+%\doublespacing
+\singlespacing
+
+%\usepackage{graphicx}
+%\usepackage{amssymb}
+%\usepackage{relsize}
+\usepackage[cmex10]{amsmath}
+%\usepackage{amsthm}
+%\interdisplaylinepenalty=2500
+%\savesymbol{iint}
+%\usepackage{txfonts}
+%\restoresymbol{TXF}{iint}
+%\usepackage{wasysym}
+\usepackage{amsthm}
+%\usepackage{iithtlc}
+\usepackage{mathrsfs}
+\usepackage{txfonts}
+\usepackage{stfloats}
+\usepackage{bm}
+\usepackage{cite}
+\usepackage{cases}
+\usepackage{subfig}
+%\usepackage{xtab}
+\usepackage{longtable}
+\usepackage{multirow}
+%\usepackage{algorithm}
+%\usepackage{algpseudocode}
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{steinmetz}
+\usepackage{tikz}
+\usepackage{circuitikz}
+\usepackage{verbatim}
+\usepackage{tfrupee}
+\usepackage[breaklinks=true]{hyperref}
+%\usepackage{stmaryrd}
+\usepackage{tkz-euclide} % loads  TikZ and tkz-base
+%\usetkzobj{all}
+\usetikzlibrary{calc,math}
+\usepackage{listings}
+    \usepackage{color}                                            %%
+    \usepackage{array}                                            %%
+    \usepackage{longtable}                                        %%
+    \usepackage{calc}                                             %%
+    \usepackage{multirow}                                         %%
+    \usepackage{hhline}                                           %%
+    \usepackage{ifthen}                                           %%
+  %optionally (for landscape tables embedded in another document): %%
+    \usepackage{lscape}     
+\usepackage{multicol}
+\usepackage{chngcntr}
+\usepackage{amsmath}
+\usepackage{cleveref}
+%\usepackage{enumerate}
+
+%\usepackage{wasysym}
+%\newcounter{MYtempeqncnt}
+\DeclareMathOperator*{\Res}{Res}
+%\renewcommand{\baselinestretch}{2}
+\renewcommand\thesection{\arabic{section}}
+\renewcommand\thesubsection{\thesection.\arabic{subsection}}
+\renewcommand\thesubsubsection{\thesubsection.\arabic{subsubsection}}
+
+\renewcommand\thesectiondis{\arabic{section}}
+\renewcommand\thesubsectiondis{\thesectiondis.\arabic{subsection}}
+\renewcommand\thesubsubsectiondis{\thesubsectiondis.\arabic{subsubsection}}
+
+% correct bad hyphenation here
+\hyphenation{op-tical net-works semi-conduc-tor}
+\def\inputGnumericTable{}                                 %%
+
+\lstset{
+%language=C,
+frame=single, 
+breaklines=true,
+columns=fullflexible
+}
+%\lstset{
+%language=tex,
+%frame=single, 
+%breaklines=true
+%}
+\usepackage{graphicx}
+\usepackage{pgfplots}
+
+\begin{document}
+%
+
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{problem}{Problem}
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{example}{Example}[section]
+\newtheorem{definition}[problem]{Definition}
+%\newtheorem{thm}{Theorem}[section] 
+%\newtheorem{defn}[thm]{Definition}
+%\newtheorem{algorithm}{Algorithm}[section]
+%\newtheorem{cor}{Corollary}
+\newcommand{\BEQA}{\begin{eqnarray}}
+\newcommand{\EEQA}{\end{eqnarray}}
+\newcommand{\define}{\stackrel{\triangle}{=}}
+\bibliographystyle{IEEEtran}
+%\bibliographystyle{ieeetr}
+\providecommand{\mbf}{\mathbf}
+\providecommand{\pr}[1]{\ensuremath{\Pr\left(#1\right)}}
+\providecommand{\qfunc}[1]{\ensuremath{Q\left(#1\right)}}
+\providecommand{\sbrak}[1]{\ensuremath{{}\left[#1\right]}}
+\providecommand{\lsbrak}[1]{\ensuremath{{}\left[#1\right.}}
+\providecommand{\rsbrak}[1]{\ensuremath{{}\left.#1\right]}}
+\providecommand{\brak}[1]{\ensuremath{\left(#1\right)}}
+\providecommand{\lbrak}[1]{\ensuremath{\left(#1\right.}}
+\providecommand{\rbrak}[1]{\ensuremath{\left.#1\right)}}
+\providecommand{\cbrak}[1]{\ensuremath{\left\{#1\right\}}}
+\providecommand{\lcbrak}[1]{\ensuremath{\left\{#1\right.}}
+\providecommand{\rcbrak}[1]{\ensuremath{\left.#1\right\}}}
+\theoremstyle{remark}
+\newtheorem{rem}{Remark}
+\newcommand{\sgn}{\mathop{\mathrm{sgn}}}
+
+
+
+\providecommand{\abs}[1]{\left\vert#1\right\vert}
+\providecommand{\res}[1]{\Res\displaylimits_{#1}} 
+\providecommand{\norm}[1]{\left\lVert#1\right\rVert}
+%\providecommand{\norm}[1]{\lVert#1\rVert}
+\providecommand{\mtx}[1]{\mathbf{#1}}
+\providecommand{\mean}[1]{E\left[ #1 \right]}
+\providecommand{\fourier}{\overset{\mathcal{F}}{ \rightleftharpoons}}
+%\providecommand{\hilbert}{\overset{\mathcal{H}}{ \rightleftharpoons}}
+\providecommand{\system}{\overset{\mathcal{H}}{ \longleftrightarrow}}
+	%\newcommand{\solution}[2]{\textbf{Solution:}{#1}}
+\newcommand{\solution}{\noindent \textbf{Solution: }}
+\newcommand{\cosec}{\,\text{cosec}\,}
+\providecommand{\dec}[2]{\ensuremath{\overset{#1}{\underset{#2}{\gtrless}}}}
+\newcommand{\myvec}[1]{\ensuremath{\begin{pmatrix}#1\end{pmatrix}}}
+\newcommand{\mydet}[1]{\ensuremath{\begin{vmatrix}#1\end{vmatrix}}}
+%\numberwithin{equation}{section}
+\numberwithin{equation}{subsection}
+%\numberwithin{problem}{section}
+%\numberwithin{definition}{section}
+\makeatletter
+\@addtoreset{figure}{problem}
+\makeatother
+\let\StandardTheFigure\thefigure
+\let\vec\mathbf
+%\renewcommand{\thefigure}{\theproblem.\arabic{figure}}
+\renewcommand{\thefigure}{\theproblem}
+%\setlist[enumerate,1]{before=\renewcommand\theequation{\theenumi.\arabic{equation}}
+%\counterwithin{equation}{enumi}
+%\renewcommand{\theequation}{\arabic{subsection}.\arabic{equation}}
+\def\putbox#1#2#3{\makebox[0in][l]{\makebox[#1][l]{}\raisebox{\baselineskip}[0in][0in]{\raisebox{#2}[0in][0in]{#3}}}}
+     \def\rightbox#1{\makebox[0in][r]{#1}}
+     \def\centbox#1{\makebox[0in]{#1}}
+     \def\topbox#1{\raisebox{-\baselineskip}[0in][0in]{#1}}
+     \def\midbox#1{\raisebox{-0.5\baselineskip}[0in][0in]{#1}}
+\vspace{3cm}
+\title{Matrix Theory (EE5609) Assignment 19}
+\author{Arkadipta De\\MTech Artificial Intelligence\\AI20MTECH14002}
+
+\maketitle
+\newpage
+%\tableofcontents
+\bigskip
+\renewcommand{\thefigure}{\theenumi}
+\renewcommand{\thetable}{\theenumi}
+
+\begin{abstract}
+This document solves a problem on a functional. 
+\end{abstract}
+All the codes for the figure in this document can be found at
+\begin{lstlisting}
+https://github.com/Arko98/EE5609/blob/master/Assignment_19
+\end{lstlisting}
+\section{\textbf{Problem}}
+Let $\mathbb{V}$ be the vector space of all $2 \times 2$ matrices over the field of real numbers, and let
+\begin{align*}
+\vec{B} &= \myvec{2&-2\\-1&1}
+\end{align*}
+Let $\mathbb{W}$ be the subspace of $\mathbb{V}$ consisting of all $\vec{A}$ such that $\vec{AB} = 0$. Let $f$ be a linear functional on $\mathbb{V}$ which is in the annihilator of $\mathbb{W}$. Suppose that $f(\vec{I}) = 0$ and $f(\vec{C}) = 3$, where $\vec{I}$ is the $2 \times 2$ identity matrix and
+\begin{align*}
+\vec{C} &= \myvec{0&0\\0&1}
+\end{align*}
+Find $f(\vec{B})$
+\section{\textbf{Solution}}
+The general linear functional $f$ on vector space $\mathbb{V}$ is of the form,
+\begin{align}
+f(\vec{A}) &= ax +by +cz +dw\label{eq1}
+\end{align}
+Where,
+\begin{align}
+\vec{A} &= \myvec{x&y\\z&w} \quad{\text{$\forall$ $\vec{A} \in \mathbb{W}$}}\\
+a,b,c,d &\in \mathbb{R}
+\end{align}
+From $\vec{AB} = 0$ we have,
+\begin{align}
+\myvec{x&y\\z&w}\myvec{2&-2\\-1&1} = \myvec{0&0\\0&0}\label{eq2}
+\end{align}
+From \eqref{eq2} we get,
+\begin{align}
+y &= 2x\label{eqy}\\
+w &= 2z\label{eqw}
+\end{align}
+Hence, using \eqref{eqy} and \eqref{eqw} we conclude that $\mathbb{W}$ consists of all the matrices of the following form,
+\begin{align}
+\vec{A} &= \myvec{x&2x\\z&2z} \quad{\text{$\forall$ $\vec{A} \in \mathbb{W}$}}\label{eqw}
+\end{align}
+Hence from \eqref{eqw} we get,
+\begin{align}
+f\brak{\myvec{x&2x\\z&2z}} &= 0 \quad{\text{$\forall$ $x,z \in \mathbb{R}$}}\\
+\implies ax+2bx+cz+2dz &= 0 \quad{\text{[From \eqref{eq1}]}}\\
+\implies (a+2b)x+(c+2d)z &= 0 \quad{\text{$\forall$ $x,z \in \mathbb{R}$}}\label{eq3}
+\end{align}
+From \eqref{eq3} we get,
+\begin{align}
+b &= -\frac{1}{2}a\label{eqb}\\
+d &= -\frac{1}{2}c\label{eqd}
+\end{align}
+Hence, from \eqref{eqb}, \eqref{eqd} and \eqref{eq1}, the general form of the functional $f$ on vector space $\mathbb{V}$ becomes,
+\begin{align}
+f\brak{\vec{A}} &= ax -\frac{1}{2}ay+cz-\frac{1}{2}cw \quad{\text{$\forall$ $\vec{A} \in \mathbb{W}$}}\label{eqGen}
+\end{align}
+Now,
+\begin{align}
+f(\vec{C}) &= 3\\
+\implies -\frac{1}{2}c &= 3 \quad{\text{[From \eqref{eqGen}]}}\\
+\implies c &= -6\label{eqVal1}
+\end{align}
+Again,
+\begin{align}
+f(\vec{I}) &= 0\\
+\implies a-\frac{1}{2}c &= 0 \quad{\text{[From \eqref{eqGen}]}}\\
+\implies a &= -3 \quad{\text{[Using \eqref{eqVal1}]}}\label{eqVal2}
+\end{align}
+Hence, using \eqref{eqVal1} and \eqref{eqVal2} the general form of $f$ in \eqref{eqGen} becomes,
+\begin{align}
+f\brak{\vec{A}} &= -3x +\frac{3}{2}y-6z+3w \quad{\text{$\forall$ $\vec{A} \in \mathbb{W}$}}\label{eqGen2}
+\end{align}
+Now for given \vec{B}, from \eqref{eqGen2} we get,
+\begin{align}
+f\brak{\vec{B}} &= -3(2) +\frac{3}{2}(-2)-6(-1)+3(1)\\
+\implies f\brak{\vec{B}} &= 0 \label{eqAns}
+\end{align}
+\eqref{eqAns} is the required answer.
+\end{document}
