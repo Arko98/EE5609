@@ -196,7 +196,7 @@ Find $f(\vec{B})$
 \section{\textbf{Solution}}
 The general linear functional $f$ on vector space $\mathbb{V}$ is of the form,
 \begin{align}
-f(\vec{A}) &= ax +by +cz +dw\label{eq1}
+f(\vec{A}) &= \myvec{a&b&c&d}\myvec{x\\y\\z\\w}\label{eq1}
 \end{align}
 Where,
 \begin{align}
@@ -219,8 +219,8 @@ Hence, using \eqref{eqy} and \eqref{eqw} we conclude that $\mathbb{W}$ consists 
 Hence from \eqref{eqw} we get,
 \begin{align}
 f\brak{\myvec{x&2x\\z&2z}} &= 0 \quad{\text{$\forall$ $x,z \in \mathbb{R}$}}\\
-\implies ax+2bx+cz+2dz &= 0 \quad{\text{[From \eqref{eq1}]}}\\
-\implies (a+2b)x+(c+2d)z &= 0 \quad{\text{$\forall$ $x,z \in \mathbb{R}$}}\label{eq3}
+\implies \myvec{a&b&c&d}\myvec{x\\2x\\z\\2z} &= 0\quad{\text{[From \eqref{eq1}]}}\label{eq3}\\
+%\implies (a+2b)x+(c+2d)z &= 0 \quad{\text{$\forall$ $x,z \in \mathbb{R}$}}\label{eq3}
 \end{align}
 From \eqref{eq3} we get,
 \begin{align}
@@ -229,27 +229,28 @@ d &= -\frac{1}{2}c\label{eqd}
 \end{align}
 Hence, from \eqref{eqb}, \eqref{eqd} and \eqref{eq1}, the general form of the functional $f$ on vector space $\mathbb{V}$ becomes,
 \begin{align}
-f\brak{\vec{A}} &= ax -\frac{1}{2}ay+cz-\frac{1}{2}cw \quad{\text{$\forall$ $\vec{A} \in \mathbb{W}$}}\label{eqGen}
+f\brak{\vec{A}} &= \myvec{a&-\frac{1}{2}a&c&-\frac{1}{2}c}\myvec{x\\y\\z\\w}\quad{\text{$\forall$ $\vec{A} \in \mathbb{W}$}}\label{eqGen}
 \end{align}
 Now,
 \begin{align}
 f(\vec{C}) &= 3\\
-\implies -\frac{1}{2}c &= 3 \quad{\text{[From \eqref{eqGen}]}}\\
+\implies \myvec{a&-\frac{1}{2}a&c&-\frac{1}{2}c}\myvec{0\\0\\0\\1} &= 3\\
 \implies c &= -6\label{eqVal1}
 \end{align}
 Again,
 \begin{align}
 f(\vec{I}) &= 0\\
-\implies a-\frac{1}{2}c &= 0 \quad{\text{[From \eqref{eqGen}]}}\\
+\implies \myvec{a&-\frac{1}{2}a&c&-\frac{1}{2}c}\myvec{1\\0\\0\\1} &= 0\\
+\implies a-\frac{1}{2}c &= 0\\
 \implies a &= -3 \quad{\text{[Using \eqref{eqVal1}]}}\label{eqVal2}
 \end{align}
 Hence, using \eqref{eqVal1} and \eqref{eqVal2} the general form of $f$ in \eqref{eqGen} becomes,
 \begin{align}
-f\brak{\vec{A}} &= -3x +\frac{3}{2}y-6z+3w \quad{\text{$\forall$ $\vec{A} \in \mathbb{W}$}}\label{eqGen2}
+f\brak{\vec{A}} &= \myvec{-3&\frac{3}{2}&-6&3}\myvec{x\\y\\z\\w} \quad{\text{$\forall$ $\vec{A} \in \mathbb{W}$}}\label{eqGen2}
 \end{align}
-Now for given \vec{B}, from \eqref{eqGen2} we get,
+Now for given $\vec{B}$, from \eqref{eqGen2} we get,
 \begin{align}
-f\brak{\vec{B}} &= -3(2) +\frac{3}{2}(-2)-6(-1)+3(1)\\
+f\brak{\vec{B}} &= \myvec{-3&\frac{3}{2}&-6&3}\myvec{2\\-2\\-1\\1}\\
 \implies f\brak{\vec{B}} &= 0 \label{eqAns}
 \end{align}
 \eqref{eqAns} is the required answer.
