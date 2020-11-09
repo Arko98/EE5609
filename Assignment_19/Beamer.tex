@@ -194,14 +194,9 @@ Let $\mathbb{W}$ be the subspace of $\mathbb{V}$ consisting of all $\vec{A}$ suc
 \end{align*}
 Find $f(\vec{B})$
 \section{\textbf{Solution}}
-The general linear functional $f$ on vector space $\mathbb{V}$ is of the form,
+Let,
 \begin{align}
-f(\vec{A}) &= \myvec{a&b&c&d}\myvec{x\\y\\z\\w}\label{eq1}
-\end{align}
-Where,
-\begin{align}
-\vec{A} &= \myvec{x&y\\z&w} \quad{\text{$\forall$ $\vec{A} \in \mathbb{W}$}}\\
-a,b,c,d &\in \mathbb{R}
+\vec{A} &= \myvec{a&b\\c&d} \quad{\text{$\forall$ $\vec{A} \in \mathbb{W}$}}
 \end{align}
 From $\vec{AB} = 0$ we have,
 \begin{align}
@@ -218,40 +213,46 @@ Hence, using \eqref{eqy} and \eqref{eqw} we conclude that $\mathbb{W}$ consists 
 \end{align}
 Hence from \eqref{eqw} we get,
 \begin{align}
-f\brak{\myvec{x&2x\\z&2z}} &= 0 \quad{\text{$\forall$ $x,z \in \mathbb{R}$}}\\
-\implies \myvec{a&b&c&d}\myvec{x\\2x\\z\\2z} &= 0\quad{\text{[From \eqref{eq1}]}}\label{eq3}
-%\implies (a+2b)x+(c+2d)z &= 0 \quad{\text{$\forall$ $x,z \in \mathbb{R}$}}\label{eq3}
+A &\in \left\{a\myvec{1&2\\0&0}+b\myvec{0&0\\1&2}\right\} \quad{\text{$\forall$ $a,c \in \mathbb{R}$}}\\
+\implies span(\mathbb{W}) &= \left\{\vec{e_1} = \myvec{1&2\\0&0}, \vec{e_2} = \myvec{0&0\\1&2}\right\}
 \end{align}
-From \eqref{eq3} we get,
+Hence, $\vec{e_1}$ and $\vec{e_2}$ are basis of $\mathbb{W}$.
+Since $f \in \mathbb{W}^0$, it follows that,
 \begin{align}
-b &= -\frac{1}{2}a\label{eqb}\\
-d &= -\frac{1}{2}c\label{eqd}
+f(\vec{e_1}) &= 0\label{v1}\\
+f(\vec{e_2}) &= 0\label{v2}
 \end{align}
-Hence, from \eqref{eqb}, \eqref{eqd} and \eqref{eq1}, the general form of the functional $f$ on vector space $\mathbb{V}$ becomes,
+Again given,
 \begin{align}
-f\brak{\vec{A}} &= \myvec{a&-\frac{1}{2}a&c&-\frac{1}{2}c}\myvec{x\\y\\z\\w}\quad{\text{$\forall$ $\vec{A} \in \mathbb{W}$}}\label{eqGen}
+f(\vec{I}) &= 0\label{v3}\\
+f(\vec{C}) &= 0\label{v4}
 \end{align}
-Now,
+From \eqref{v1}, \eqref{v2}, \eqref{v3} and \eqref{v4} we conclude that $\vec{I},\vec{C},\vec{e_1}, \vec{e_2}$ are linearly independent. We prove the statement as follows,
 \begin{align}
-f(\vec{C}) &= 3\\
-\implies \myvec{a&-\frac{1}{2}a&c&-\frac{1}{2}c}\myvec{0\\0\\0\\1} &= 3\\
-\implies c &= -6\label{eqVal1}
+c_1\myvec{1&0\\0&1}+c_2\myvec{0&0\\0&1}+c_3\myvec{1&2\\0&0}+c_4\myvec{0&0\\1&2} &= \myvec{0&0\\0&0}\\
+\implies \myvec{c_1+c_3&2c_3\\c_4&c_1+c_2+2c_4} &= \myvec{0&0\\0&0}\\
+\implies c_1 = c_2 = c_3 = c_4 &= 0\label{ind}
 \end{align}
-Again,
+Since $dim(\mathbb{V}) = 2\times2 = 4$, hence the set $\left\{\vec{I},\vec{C},\vec{e_1}, \vec{e_2}\right\}$ forms a basis for the vector-space $\mathbb{V}$ which is the vector-space of all $2 \times 2$ matrices.\\
+Since $\vec{B} \in \mathbb{V}$ then there exists $c_1,c_2,c_3,c_4$ such that,
 \begin{align}
-f(\vec{I}) &= 0\\
-\implies \myvec{a&-\frac{1}{2}a&c&-\frac{1}{2}c}\myvec{1\\0\\0\\1} &= 0\\
-\implies a-\frac{1}{2}c &= 0\\
-\implies a &= -3 \quad{\text{[Using \eqref{eqVal1}]}}\label{eqVal2}
+&c_1\vec{I}+c_2\vec{C}+c_3\vec{e_1}+c_4\vec{e_2} =\vec{B}\\
+&c_1\myvec{1&0\\0&1}+c_2\myvec{0&0\\0&1}+c_3\myvec{1&2\\0&0}+c_4\myvec{0&0\\1&2}\\
+&=\myvec{2&-2\\-1&1}\\
+&\myvec{c_1+c_3&2c_3\\c_4&c_1+c_2+2c_4} = \myvec{2&-2\\-1&1}\label{sys}\\
 \end{align}
-Hence, using \eqref{eqVal1} and \eqref{eqVal2} the general form of $f$ in \eqref{eqGen} becomes,
+From \eqref{sys} we get,
 \begin{align}
-f\brak{\vec{A}} &= \myvec{-3&\frac{3}{2}&-6&3}\myvec{x\\y\\z\\w} \quad{\text{$\forall$ $\vec{A} \in \mathbb{W}$}}\label{eqGen2}
+c_1 &= 3\label{val1}\\
+c_2 &= 0\label{val2}\\
+c_3 &= -1\label{val3}\\
+c_4 &= -1\label{val4}
 \end{align}
-Now for given $\vec{B}$, from \eqref{eqGen2} we get,
+From \eqref{val1}, \eqref{val2}, \eqref{val3} and \eqref{val4} we get,
 \begin{align}
-f\brak{\vec{B}} &= \myvec{-3&\frac{3}{2}&-6&3}\myvec{2\\-2\\-1\\1}\\
-\implies f\brak{\vec{B}} &= 0 \label{eqAns}
+f(\vec{B}) &= f(3\vec{I}-\vec{e_1}-\vec{e_2})\\
+&= 3f(\vec{I})-f(\vec{e_1})-f(\vec{e_2})\\
+&= 0\label{Ans}
 \end{align}
-\eqref{eqAns} is the required answer.
+The \eqref{Ans} is the required answer.
 \end{document}
