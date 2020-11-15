@@ -208,12 +208,11 @@ Let $\mathbb{V}$ and $\mathbb{W}$ be vector spaces, over the field $F$. For each
 \end{align}
 The given linear operator $T$ defined as,
 \begin{align}
-T(x_1,x_2) &= \vec{A}\vec{x} = \vec{x^{\prime}} \quad{\text{$\forall (x_1,x_2) \in \mathbb{F}^2$}}\label{qn}
+T(x_1,x_2) &= \vec{A}\vec{x} = \myvec{x_1\\0} \quad{\text{$\forall (x_1,x_2) \in \mathbb{F}^2$}}\label{qn}
 \end{align}
 Where,
 \begin{align}
 \vec{A} &= \myvec{1&0\\0&0}\\
-\vec{x^{\prime}} &= \myvec{x_1\\0}
 \end{align}
 Consider the following mapping,
 \begin{align}
@@ -224,7 +223,7 @@ Then, $\forall (x_1,x_2) \in \mathbb{F}^2$ we have,
 g(x_1,x_2) &= T^tf(x_1,x_2) \quad{\text{[From \eqref{map}]}}\\
 &= f(T(x_1,x_2)) \quad{\text{[From \eqref{theorem}]}}\\
 &= \vec{a^T}\vec{A}\vec{x}\\
-&= \vec{a^T}\vec{x^{\prime}} \quad{\text{[From \eqref{qn}]}}\\
+&= \vec{a^T}\myvec{x_1\\0} \quad{\text{[From \eqref{qn}]}}\\
 &= ax_1 \quad{\text{[From \eqref{def}]}}\label{ans}
 \end{align}
 Hence, \eqref{ans} is the required answer.
